@@ -23,20 +23,20 @@
           </div>
           <div class="card-body">
             <p class="card-description text-center"><strong>vitaltest</strong> te da la bienvenida, esperamos disfrutes de nuestros beneficios </p>
-            <div class="bmd-form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">
-                    <span class="material-icons">person_outline</span>
-                  </span>
+            <div class="bmd-form-group{{ $errors->has('username') ? ' has-danger' : '' }}">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="material-icons">account_circle</i>
+                    </span>
+                  </div>
+                  <input type="text" name="username" class="form-control" placeholder="{{ __('Nombre usuario o Correo...') }}" value="{{ old('username', null) }}" required autocomplete="username" autofocus>
                 </div>
-                <input type="email" name="email" class="form-control" placeholder="{{ __('Correo electrónico...') }}" value="{{ old('email', null) }}" required autocomplete="email" autofocus>
-              </div>
-              @if ($errors->has('email'))
-                <div id="email-error" class="error text-danger pl-3" for="email" style="display: block;">
-                  <strong>{{ $errors->first('email') }}</strong>
-                </div>
-              @endif
+                @if ($errors->has('username'))
+                  <div id="email-error" class="error text-danger pl-3" for="username" style="display: block;">
+                    <strong>{{ $errors->first('username') }}</strong>
+                  </div>
+                @endif
             </div>
             <div class="bmd-form-group{{ $errors->has('password') ? ' has-danger' : '' }} mt-3">
               <div class="input-group">

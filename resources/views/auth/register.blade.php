@@ -21,20 +21,21 @@
           </div>
           <div class="card-body ">
             <p class="card-description text-center">Complete las sigientes credenciales</p>
-            <div class="bmd-form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">
-                    <i class="material-icons">perm_identity</i>
-                  </span>
+            {{-- Campo username --}}
+            <div class="bmd-form-group{{ $errors->has('username') ? ' has-danger' : '' }} mt-3">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <i class="material-icons">account_circle</i>
+                    </span>
+                  </div>
+                  <input type="text" name="username" class="form-control" placeholder="{{ __('Nombre de usuario...') }}" value="{{ old('username') }}" required autocomplete="username">
                 </div>
-                <input type="text" name="name" class="form-control" placeholder="{{ __('Nombre de usuario') }}" value="{{ old('name') }}" required autocomplete="name" autofocus >
-              </div>
-              @if ($errors->has('name'))
-                <div id="name-error" class="error text-danger pl-3" for="name" style="display: block;">
-                  <strong>{{ $errors->first('name') }}</strong>
-                </div>
-              @endif
+                @if ($errors->has('username'))
+                  <div id="username-error" class="error text-danger pl-3" for="username" style="display: block;">
+                    <strong>{{ $errors->first('username') }}</strong>
+                  </div>
+                @endif
             </div>
             <div class="bmd-form-group{{ $errors->has('email') ? ' has-danger' : '' }} mt-3">
               <div class="input-group">
