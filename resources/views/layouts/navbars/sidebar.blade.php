@@ -1,4 +1,4 @@
-<div class="sidebar" data-color="orange" data-background-color="white" data-image="{{ asset('img/sidebar-1.jpg') }}">
+<div class="sidebar" data-color="azure" data-background-color="white" data-image="{{asset('img/sidebar-1.jpg') }}">
   <!--
       Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
@@ -62,6 +62,12 @@
                 <span class="sidebar-normal"> {{ __('Sintomas') }} </span>
               </a>
             </li>
+            <li class="nav-item{{ $activePage == 'recomendaciones' ? ' active' : '' }}">
+                <a class="nav-link" href="{{route('sintomas.index')}}">
+                  <i class="material-icons">medication_liquid </i>
+                  <span class="sidebar-normal"> {{ __('Recomendaciones') }} </span>
+                </a>
+              </li>
           </ul>
         </div>
       </li>

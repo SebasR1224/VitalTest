@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Imc extends Model
 {
-    public function recomendacion(){
-        return $this->belongsTo(Recomendacion::class);
+    public function recomendaciones(){
+        return $this->hasMany(Recomendacion::class);
     }
 }

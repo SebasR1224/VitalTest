@@ -98,7 +98,7 @@
                                 <hr>
                                 <div class="row">
                                   <div class="col-sm-3">
-                                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editProfile">Editar información</button>
+                                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editProfile{{ Auth::user()->id}}">Editar información</button>
                                   </div>
                                 </div>
                               </div>
@@ -110,7 +110,7 @@
         </div>
     </div>
     <!-- Modal -->
-    <div class="modal fade" id="editProfile" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal fade" id="editProfile{{ Auth::user()->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header bg-primary text-white">
@@ -120,9 +120,7 @@
             </button>
           </div>
           <div class="modal-body">
-            <form action="{{route('save.profile')}}" method="post">
-                <input type="hidden" name="id" value="{{ @old('id', $datos->id)}}">
-                <input type="hidden" name="user_id" value=" {{ Auth::user()->id}}">
+            <form action="" method="post">
                 @csrf
                 <div class="row mt-2">
                     <div class="col-md-4"><input type="text" class="form-control" name="nombre" placeholder="Nombre"></div>

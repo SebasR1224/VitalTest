@@ -24,6 +24,8 @@ class UserController extends Controller
         }
         return view('users.create' , compact('user'));
     }
+
+
     public function store(UserCreateRequest $request){
         User::create($request->only('username' , 'email')
         + [
@@ -57,6 +59,7 @@ class UserController extends Controller
         return redirect()->route('users.index')->with('message_add', 'Usuario actualizado correctamente');
     }
 
+    //detalles de usuarios
     public function show($id){
         $user = User::find($id);
         $datos=$user->profile;
@@ -65,36 +68,9 @@ class UserController extends Controller
 
 
     //profile
-
     public function profile($id){
         $user = User::find($id);
         $datos=$user->profile;
         return view('users.profile' , compact('datos', 'user'));
-    }
-
-    function saveProfile(Request $request){
-
-        $datos = new Profile();
-        $messageDatos_add = "¡Genial! completaste tu perfil de usuario";
-
-        if(intval($request->id)>0){
-            $datos = Profile::findOrFail($request->id);
-            $messageDatos_add = "Campos editados correctamente";
-        }
-
-        $datos->nombre = $request->nombre;
-        $datos->apellido1 =$request->apellido1;
-        $datos->apellido2 =$request->apellido2;
-        $datos->tipoDocumento =$request->tipoDocumento;
-        $datos->numDocumento =$request->numDocumento;
-        $datos->telefono =$request->telefono;
-        $datos->direccion =$request->direccion;
-        $datos->fechaNacimiento =$request->fechaNacimiento;
-        $datos->estado =$request->estado;
-        $datos->user_id =$request->user_id;
-
-        $datos->save();
-        return redirect()->back()->with('messageDatos_add', $messageDatos_add);
-
     }
 }

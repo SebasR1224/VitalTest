@@ -26,13 +26,8 @@ Route::post('/users' , [App\Http\Controllers\UserController::class, 'store'])->n
 Route::get('/users', [App\Http\Controllers\UserController::class, 'index'])->name('users.index');
 Route::get('/users/{id}', [App\Http\Controllers\UserController::class, 'show'])->name('users.show');
 Route::post('/users/{id}' , [App\Http\Controllers\UserController::class, 'update'])->name('users.update');
-
-//profile
 Route::get('/users/profile/{id}', [App\Http\Controllers\UserController::class, 'profile'])->name('users.profile');
 
-Route::post('/users/profile', [App\Http\Controllers\UserController::class, 'saveProfile'])->name('save.profile');
-
-Route::post('/product/save', [ProductController::class, 'save'])->name('product.save');
 
 
 
@@ -44,3 +39,7 @@ Route::post('/recomendaciones/partes', [App\Http\Controllers\ParteController::cl
 //sintomas
 Route::get('/recomendaciones/sintomas', [App\Http\Controllers\SintomaController::class, 'show'])->name('sintomas.show');
 Route::post('/recomendaciones/sintomas', [App\Http\Controllers\SintomaController::class, 'save'])->name('sintoma.save');
+
+//recomendaciones
+Route::get('/recomendaciones', [App\Http\Controllers\RecomendacionController::class, 'index'])->name('sintomas.index');
+Route::get('/recomendaciones/detalles/{id}', [App\Http\Controllers\RecomendacionController::class, 'show'])->name('recomendacion.show');

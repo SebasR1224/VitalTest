@@ -5,16 +5,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Recomendacion extends Model
 {
-    //relaion uno a muchos
-    public function partes(){
-        return $this->hasMany(ParteCuerpo::class);
+
+    //relacion uno a muchos(inversa)
+    public function parte(){
+        return $this->belongsTo(ParteCuerpo::class);
     }
 
-    public function sintomas(){
-        return $this->hasMany(Sintoma::class);
+    public function sintoma(){
+        return $this->belongsTo(Sintoma::class);
     }
-    public function imcs(){
-        return $this->hasMany(Imc::class);
+    public function imc(){
+        return $this->belongsTo(Imc::class);
     }
 
     //relacion muchos a muchos

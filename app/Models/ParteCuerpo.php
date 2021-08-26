@@ -10,7 +10,7 @@ class ParteCuerpo extends Model
 
     //Relacion uno a muchos inversa
 
-    public function recomendacion(){
-        return $this->belongsTo(Recomendacion::class);
+    public function recomendaciones(){
+        return $this->hasMany(Recomendacion::class);
     }
 }
