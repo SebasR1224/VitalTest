@@ -13,9 +13,9 @@
                         <div class="col-md-4 mb-3">
                             <div class="card">
                               <div class="card-body">
-                                @if (session('messageData_add'))
+                                @if (session('messageProfile_add'))
                                 <script>
-                                    swal("Aviso","{!! Session::get('messageData_add') !!}" , "success", {
+                                    swal("Aviso","{!! Session::get('messageProfile_add') !!}" , "success", {
                                         button: "Ok",
                                     })
                                 </script>
@@ -56,7 +56,7 @@
                                     <h6 class="mb-0">Tipo de documento</h6>
                                   </div>
                                   <div class="col-sm-9 text-secondary">
-                                    {{ @old('tipoDodumento', $datos->tipoDocumentos)}}
+                                    {{ @old('tipoDodumento', $datos->tipoDocumento)}}
                                   </div>
                                 </div>
                                 <hr>
@@ -120,12 +120,13 @@
             </button>
           </div>
           <div class="modal-body">
-            <form action="" method="post">
+            <form action="{{ $datos->id ? route('profile.update') : route('profile.create')}}" method="post">
                 @csrf
                 <div class="row mt-2">
-                    <div class="col-md-4"><input type="text" class="form-control" name="nombre" placeholder="Nombre"></div>
-                    <div class="col-md-4"><input type="text" class="form-control" name="apellido1"  placeholder="Primer apellido"></div>
-                    <div class="col-md-4"><input type="text" class="form-control" name="apellido2"  placeholder="Segundo apellido"></div>
+                    <input type="hidden"  name="id" value="{{$datos->id}}">
+                    <div class="col-md-4"><input type="text" class="form-control" name="nombre" value=" {{ @old('name', $datos->nombre)}}" placeholder="Nombre"></div>
+                    <div class="col-md-4"><input type="text" class="form-control" name="apellido1" value="{{ @old('apellido1', $datos->apellido1)}}" placeholder="Primer apellido"></div>
+                    <div class="col-md-4"><input type="text" class="form-control" name="apellido2" value="{{ @old('apellido2', $datos->apellido2)}}" placeholder="Segundo apellido"></div>
                 </div>
                 <div class="row mt-3">
                     <div class="col-md-6">
@@ -136,16 +137,16 @@
                             <option value="PS">Pasaporte</option>
                         </select>
                     </div>
-                    <div class="col-md-6"><input type="text" class="form-control" name="numDocumento" placeholder="Numero de documento"></div>
+                    <div class="col-md-6"><input type="text" class="form-control" name="numDocumento" value="{{ @old('numDocumento', $datos->numDocumento)}}" placeholder="Numero de documento"></div>
                 </div>
                 <div class="row mt-3">
-                    <div class="col-md-6"><input type="text" class="form-control" name="telefono" placeholder="Teléfono"></div>
-                    <div class="col-md-6"><input type="text" class="form-control" name="direccion" placeholder="Dirección"></div>
-                    <div class="col-md-6"><input type="hidden" class="form-control" name="user_1" value="2" placeholder="Dirección"></div>
+                    <div class="col-md-6"><input type="text" class="form-control" name="telefono" value="{{ @old('telefono', $datos->telefono)}}" placeholder="Teléfono"></div>
+                    <div class="col-md-6"><input type="text" class="form-control" name="direccion"  value="{{ @old('direccion', $datos->direccion)}}" placeholder="Dirección"></div>
+                    <div class="col-md-6"><input type="hidden" class="form-control" name="user_id" value="{{ Auth::user()->id}}" placeholder=""></div>
                 </div>
                 <div class="row mt-3">
-                    <div class="col-md-6"><input type="date" class="form-control" name="fechaNacimiento" placeholder="Fecha de nacimiento" ></div>
-                    <div class="col-md-6"><input type="text" class="form-control" name="estado" placeholder="Estado" ></div>
+                    <div class="col-md-6"><input type="date" class="form-control" name="fechaNacimiento"  value="{{ @old('fechaNacimiento', $datos->fechaNacimiento)}}" placeholder="Fecha de nacimiento" ></div>
+                    <div class="col-md-6"><input type="hidden" class="form-control" name="estado" value="{{ @old('estado', $datos->estado)}}"></div>
                 </div>
                 <div class="modal-footer mt-4">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>

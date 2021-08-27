@@ -46,3 +46,6 @@ Route::get('/recomendaciones/detalles/{id}', [App\Http\Controllers\Recomendacion
 Route::get('/recomendaciones/form/{id?}', [App\Http\Controllers\RecomendacionController::class, 'form'])->name('recomendacion.form');
 Route::post('/recomendaciones' , [App\Http\Controllers\RecomendacionController::class, 'create'])->name('recomendacion.create');
 Route::post('/recomendaciones/{id}' , [App\Http\Controllers\RecomendacionController::class, 'update'])->name('recomendacion.update');
+
+Route::post('/profiles' , [App\Http\Controllers\ProfileController::class, 'create'])->name('profile.create');
+Route::post('/profiles' , [App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
