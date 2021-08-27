@@ -15,7 +15,7 @@ class ParteController extends Controller
     public function save(Request $request){
 
         $request->validate([
-            'nombreParte' =>'unique:parte_cuerpos,nombreParte,'.$request->id,
+            'nombreParte' =>'required|min:3|max:50|unique:parte_cuerpos,nombreParte,'.$request->id,
         ]);
 
         $parte = new ParteCuerpo();

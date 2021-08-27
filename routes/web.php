@@ -41,5 +41,8 @@ Route::get('/recomendaciones/sintomas', [App\Http\Controllers\SintomaController:
 Route::post('/recomendaciones/sintomas', [App\Http\Controllers\SintomaController::class, 'save'])->name('sintoma.save');
 
 //recomendaciones
-Route::get('/recomendaciones', [App\Http\Controllers\RecomendacionController::class, 'index'])->name('sintomas.index');
+Route::get('/recomendaciones', [App\Http\Controllers\RecomendacionController::class, 'index'])->name('recomendacion.index');
 Route::get('/recomendaciones/detalles/{id}', [App\Http\Controllers\RecomendacionController::class, 'show'])->name('recomendacion.show');
+Route::get('/recomendaciones/form/{id?}', [App\Http\Controllers\RecomendacionController::class, 'form'])->name('recomendacion.form');
+Route::post('/recomendaciones' , [App\Http\Controllers\RecomendacionController::class, 'create'])->name('recomendacion.create');
+Route::post('/recomendaciones/{id}' , [App\Http\Controllers\RecomendacionController::class, 'update'])->name('recomendacion.update');

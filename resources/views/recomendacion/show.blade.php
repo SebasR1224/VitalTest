@@ -2,6 +2,13 @@
 @section('content')
 <div class="content">
     <div class="container-fluid">
+        @if (session('messageRecomendacion_add'))
+        <script>
+            swal("Aviso","{!! Session::get('messageRecomendacion_add') !!}" , "success", {
+                button: "Ok",
+            })
+        </script>
+        @endif
         <div class="row">
             <div class="col-md-12">
                 <div class="bg-white border rounded mt-2">
@@ -100,17 +107,23 @@
                     </div>
                     <div class="col-md-6 mt-3">
                         <div class="bg-white p-3 rounded border">
-                            <h6>Landing page Boostand - #238</h6>
-                            <p class="text-black-50 content mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
-                            <div class="d-flex flex-row">
-                                <div class="mr-4"> <span>Developers</span>
-                                    <div class="mt-1"> <span class="alpha alpha-red">M</span> <span class="alpha alpha-green">W</span> </div>
-                                </div>
-                                <div class="mr-4"> <span>Deadline</span>
-                                    <div class="mt-2"> <span class="text-black-50">30 Dec 2020</span> </div>
-                                </div>
-                                <div class="mr-4"> <span>Budget</span>
-                                    <div class="mt-2"> <span class="text-black-50">$17,000</span> </div>
+                            <h6>Información adicional</h6>
+                            <p class="text-black-50 content mb-5">Señ@r farmaceutico, para la recomendación <span class="font-weight-bold">{{$recomendacion->nombreRecomendacion}}</span> los consejos son </p>
+                            <div class="container">
+                                <div class="card">
+                                    <div class="row no-gutters">
+                                        <div class="col-md-8">
+                                            <div class="rating-progress-bars p-2">
+                                                <div class="progress-1 align-items-center">
+                                                    <div class="d-flex flex-row">
+                                                        <ul class="list-group list-group-flush">
+                                                            <li class="list-group-item">{{$recomendacion->informacionAdicional}}</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -127,8 +140,8 @@
                                                 <div class="progress-1 align-items-center">
                                                     <div class="d-flex flex-row">
                                                         <ul class="list-group list-group-flush">
-                                                        <li class="list-group-item">{{$recomendacion->imc->nombreImc}}</li>
-                                                      </ul>
+                                                            <li class="list-group-item">{{$recomendacion->imc->nombreImc}}</li>
+                                                        </ul>
                                                     </div>
                                                 </div>
                                             </div>

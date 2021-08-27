@@ -43,7 +43,7 @@ class UserController extends Controller
                 'username' => 'unique:users,username,'.$id,
 
                 'email' =>
-                    ['required', 'unique:users,email,'.$id]
+                    ['email','required', 'unique:users,email,'.$id]
 
             ]
         );

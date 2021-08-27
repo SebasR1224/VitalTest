@@ -63,7 +63,7 @@
               </a>
             </li>
             <li class="nav-item{{ $activePage == 'recomendaciones' ? ' active' : '' }}">
-                <a class="nav-link" href="{{route('sintomas.index')}}">
+                <a class="nav-link" href="{{route('recomendacion.index')}}">
                   <i class="material-icons">medication_liquid </i>
                   <span class="sidebar-normal"> {{ __('Recomendaciones') }} </span>
                 </a>

@@ -12,16 +12,9 @@
                                     <p class="card-category">Lista completa de todas las recomendaciones registradas en el sistema</p>
                                 </div>
                                 <div class="card-body">
-                                    @if (session('messageRecome_add'))
-                                    <script>
-                                        swal("Aviso","{!! Session::get('messageRecome_add') !!}" , "success", {
-                                            button: "Ok",
-                                        })
-                                    </script>
-                                    @endif
                                     <div class="row">
                                         <div class="col-12 text-right">
-                                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#newParte">Agregar</button>
+                                            <a href="{{route('recomendacion.form')}}" class="btn btn-success"> Agregar</a>
                                         </div>
                                     </div>
                                     <div class="table-responsive">
@@ -47,7 +40,7 @@
                                                     <td>{{$list->frecuencia}}</td>
                                                     <td>{{$list->tiempo}}</td>
                                                     <td class="td-actions text-right">
-                                                        <a href="" class="btn btn-warning"> <i class="material-icons">edit</i></a>
+                                                        <a href="{{route('recomendacion.form', ['id'=>$list->id])}}" class="btn btn-warning"> <i class="material-icons">edit</i></a>
                                                         <a href="{{route('recomendacion.show', ['id'=>$list->id])}}"  class="btn btn-success"><i class="material-icons">playlist_add_check_circle</i></a>
                                                     </td>
                                                 </tr>

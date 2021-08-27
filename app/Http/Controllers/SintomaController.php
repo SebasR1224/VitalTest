@@ -16,7 +16,7 @@ class SintomaController extends Controller
     public function save(Request $request){
 
         $request->validate([
-            'nombreSintoma' =>'unique:sintomas,nombreSintoma,'.$request->id,
+            'nombreSintoma' => ['required','min:5','max:50', 'unique:sintomas,nombreSintoma,'.$request->id]
         ]);
 
         $sintoma = new Sintoma();
