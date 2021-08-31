@@ -120,10 +120,9 @@
             </button>
           </div>
           <div class="modal-body">
-            <form action="{{ $datos->id ? route('profile.update') : route('profile.create')}}" method="post">
+            <form action="{{ $datos->id ? route('profile.update', $datos->id) : route('profile.create')}}" method="post">
                 @csrf
                 <div class="row mt-2">
-                    <input type="hidden"  name="id" value="{{$datos->id}}">
                     <div class="col-md-4"><input type="text" class="form-control" name="nombre" value=" {{ @old('name', $datos->nombre)}}" placeholder="Nombre"></div>
                     <div class="col-md-4"><input type="text" class="form-control" name="apellido1" value="{{ @old('apellido1', $datos->apellido1)}}" placeholder="Primer apellido"></div>
                     <div class="col-md-4"><input type="text" class="form-control" name="apellido2" value="{{ @old('apellido2', $datos->apellido2)}}" placeholder="Segundo apellido"></div>
@@ -137,7 +136,7 @@
                             <option value="PS">Pasaporte</option>
                         </select>
                     </div>
-                    <div class="col-md-6"><input type="text" class="form-control" name="numDocumento" value="{{ @old('numDocumento', $datos->numDocumento)}}" placeholder="Numero de documento"></div>
+                    <div class="col-md-6"><input type="text" class="form-control" name="numDocumento" value="{{ @old('numDocumento', $datos->numDocumento)}}"  placeholder="Numero de documento"></div>
                 </div>
                 <div class="row mt-3">
                     <div class="col-md-6"><input type="text" class="form-control" name="telefono" value="{{ @old('telefono', $datos->telefono)}}" placeholder="Teléfono"></div>
@@ -146,7 +145,7 @@
                 </div>
                 <div class="row mt-3">
                     <div class="col-md-6"><input type="date" class="form-control" name="fechaNacimiento"  value="{{ @old('fechaNacimiento', $datos->fechaNacimiento)}}" placeholder="Fecha de nacimiento" ></div>
-                    <div class="col-md-6"><input type="hidden" class="form-control" name="estado" value="{{ @old('estado', $datos->estado)}}"></div>
+                    <div class="col-md-6"><input type="hidden" class="form-control" name="estado" value="Activo"></div>
                 </div>
                 <div class="modal-footer mt-4">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>

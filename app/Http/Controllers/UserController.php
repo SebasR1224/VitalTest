@@ -66,11 +66,10 @@ class UserController extends Controller
         return view('users.show' , compact('datos', 'user'));
     }
 
-
     //profile
     public function profile($id){
-        $user = User::find($id);
-        $datos=$user->profile;
+            $user = User::find($id);
+            $datos = $user->profile;
         return view('users.profile' , compact('datos', 'user'));
     }
 }

@@ -48,4 +48,7 @@ Route::post('/recomendaciones' , [App\Http\Controllers\RecomendacionController::
 Route::post('/recomendaciones/{id}' , [App\Http\Controllers\RecomendacionController::class, 'update'])->name('recomendacion.update');
 
 Route::post('/profiles' , [App\Http\Controllers\ProfileController::class, 'create'])->name('profile.create');
-Route::post('/profiles' , [App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
+Route::post('/profiles/{id}' , [App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
+
+//Permisos
+Route::resource('permissions', App\Http\Controllers\PermissionController::class);

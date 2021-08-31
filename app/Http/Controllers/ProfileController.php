@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Profile;
-use App\Models\User;
 use Illuminate\Http\Request;
 
 class ProfileController extends Controller
@@ -14,8 +13,8 @@ class ProfileController extends Controller
         return redirect()->back()->with('messageProfile_add' , 'Genial, acabas de completar tú perfil');
     }
 
-    public function update(Request $request){
-        $profile=Profile::findOrfail($request->id);
+    public function update(Request $request, $id){
+        $profile=Profile::findOrfail($id);
         $dataProfile = $request->all();
         $profile->update($dataProfile);
         return redirect()->back()->with('messageProfile_add', 'Se han actualizado los campos');
