@@ -26,7 +26,7 @@ class PermissionController extends Controller
      */
     public function create()
     {
-        //
+        return view('permissions.create');
     }
 
     /**
@@ -37,7 +37,8 @@ class PermissionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Permission::create($request->all());
+        return redirect()->route('permissions.index')->with('messagePermission_add', 'Has agregado un nuevo permiso');
     }
 
     /**
@@ -57,9 +58,9 @@ class PermissionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Permission $permission)
     {
-        //
+        return view('permissions.edit', compact('permission'));
     }
 
     /**
@@ -69,10 +70,14 @@ class PermissionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+
+
+    public function update(Request $request, Permission $permission)
     {
-        //
+        $permission->update($request->all());
+        return redirect()->route('permissions.index')->with('messagePermission_add', 'Editado');
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -80,8 +85,9 @@ class PermissionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Permission $permission)
     {
-        //
+        $permission->delete();
+        return redirect()->route('permissions.index')->with('messagePermission_delete', 'ok');
     }
 }

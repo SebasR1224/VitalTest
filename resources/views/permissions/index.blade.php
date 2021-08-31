@@ -7,6 +7,13 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="card">
+                                @if (session('messagePermission_add'))
+                                    <script>
+                                        swal("Aviso","{!! Session::get('messagePermission_add') !!}" , "success", {
+                                            button: "Ok",
+                                        })
+                                    </script>
+                                @endif
                                 <div class="card-header card-header-primary">
                                     <h4 class="card-title">Lista de permisos</h4>
                                     <p class="card-category">permisos registrados</p>
@@ -14,7 +21,7 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-12 text-right">
-                                            <a href="" class="btn btn-success"> Agregar</a>
+                                            <a href="{{route('permissions.create')}}" class="btn btn-success"> Agregar</a>
                                         </div>
                                     </div>
                                     <div class="table-responsive">
@@ -29,19 +36,16 @@
                                             @foreach ($permissions as $permission)
                                             <tbody>
                                                 <tr>
-                                                    <td>{{$list->id}}</td>
+                                                    <td>{{$permission->id}}</td>
                                                     <td>{{$permission->name}}</td>
                                                     <td>{{$permission->guard_name}}</td>
                                                     <td>{{$permission->created_at}}</td>
                                                     <td class="td-actions text-right">
-                                                        <a href="{{route('recomendacion.edit', ['id'=>$list->id])}}" class="btn btn-warning"> <i class="material-icons">edit</i></a>
-                                                        <form action="{{route('permissions.destroy', $permission->id)}}" method="post"
-                                                            style="display: inline-block;" onsubmit="return confirm('Seguro?')">
-                                                            @csrf
+                                                        <a href="{{route('permissions.edit', $permission->id)}}" class="btn btn-warning"> <i class="material-icons">edit</i></a>
+                                                        <form action="{{ route('permissions.destroy', $permission->id) }}" method="POST" class="d-inline">
                                                             @method('DELETE')
-                                                            <button class="bnt btn-danger" type="submit" rel="tooltip">
-                                                                <i class="material-icons">close</i>
-                                                            </button>
+                                                            @csrf
+                                                            <button class="btn btn-danger" type="submit"><i class="material-icons">close</i> </button>
                                                         </form>
                                                     </td>
                                                 </tr>
@@ -61,5 +65,6 @@
         </div>
     </div>
 @endsection
+
 
 
