@@ -40,11 +40,18 @@
                                                     <td>{{$user->id}}</td>
                                                     <td>{{$user->username}}</td>
                                                     <td>{{$user->email}}</td>
-                                                    <td></td>
+                                                    <td>
+                                                        @forelse ($user->roles as $role )
+                                                            <span class="badge badge-info">{{$role->name}}</span>
+                                                        @empty
+                                                        <span class="badge badge-danger">Usuario sin rol</span>
+                                                        @endforelse
+                                                    </td>
                                                     <td>{{$user->created_at}}</td>
                                                     <td class="td-actions text-right">
                                                         <a href="{{route('users.show', ['id'=>$user->id])}}"  class="btn btn-info"><i class="material-icons">contacts</i></a>
-                                                        <a href="{{route('users.create', ['id'=> $user->id]) }}" class="btn btn-warning"> <i class="material-icons">edit</i></a>
+                                                        <a href="{{route('users.edit', ['id'=> $user->id]) }}" class="btn btn-warning"> <i class="material-icons">edit</i></a>
+
                                                         <button class="btn btn-success" type="button">
                                                             <i class="material-icons">arrow_circle_up</i>
                                                         </button>

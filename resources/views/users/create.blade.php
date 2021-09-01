@@ -28,7 +28,7 @@
                                         </div>
                                         <label for="username" class="col-sm-2 col-form-label">Nombre de usuario</label>
                                         <div class="col-sm-7">
-                                            <input type="text" class="form-control" id="username" name="username" placeholder="Nombre de usuario" autofocus>
+                                            <input type="text" class="form-control" id="username" name="username" value="{{@old('username', $user->username)}}" placeholder="Nombre de usuario" autofocus>
                                         </div>
                                     </div>
                                 </div>
@@ -39,7 +39,7 @@
                                         </div>
                                         <label for="email" class="col-sm-2 col-form-label">Correo</label>
                                         <div class="col-sm-7">
-                                            <input type="email" class="form-control" id="email" name="email" placeholder="Correo electrónico">
+                                            <input type="email" class="form-control" id="email" name="email" value="{{@old('email', $user->email)}}" placeholder="Correo electrónico">
                                         </div>
                                     </div>
                                 </div>
@@ -90,7 +90,7 @@
                                 </div>
                             </div>
                             <div class="card-footer ml-auto mr-auto">
-                                <button type="submit" class="btn btn-warning">Añadir</button>
+                                <button type="submit" class="btn btn-success">Agregar usuario</button>
                             </div>
                         </div>
                     </form>

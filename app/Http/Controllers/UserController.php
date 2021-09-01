@@ -36,9 +36,14 @@ class UserController extends Controller
         return redirect()->route('users.index')->with('message_add', 'Usuario creado con exito');
     }
 
+    public function edit(Request $request, $id)
+    {
+        $user=User::findOrfail($id);
+        return view('users.edit', compact('user'));
+    }
 
-    public function update(Request $request, $id){
-
+    public function update(Request $request, $id)
+    {
         $request->validate(
             [
                 'password' =>'sometimes',
@@ -49,7 +54,6 @@ class UserController extends Controller
 
             ]
         );
-
 
         $user=User::findOrfail($id);
         $data = $request->only('username' , 'email');
