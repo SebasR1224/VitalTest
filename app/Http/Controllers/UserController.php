@@ -39,7 +39,10 @@ class UserController extends Controller
     public function edit(Request $request, $id)
     {
         $user=User::findOrfail($id);
-        return view('users.edit', compact('user'));
+
+        $roles = Role::all()->pluck('name' , 'id');
+        $user->load('roles');
+        return view('users.edit', compact('user', 'roles'));
     }
 
     public function update(Request $request, $id)
@@ -62,6 +65,8 @@ class UserController extends Controller
             $data['password'] = bcrypt($password);
 
         $user->update($data);
+        $roles = $request->input('roles', []);
+        $user->syncRoles($roles);
         return redirect()->route('users.index')->with('message_add', 'Usuario actualizado correctamente');
     }
 
@@ -69,6 +74,7 @@ class UserController extends Controller
     public function show($id){
         $user = User::find($id);
         $datos=$user->profile;
+        $user->load('roles');
         return view('users.show' , compact('datos', 'user'));
     }
 

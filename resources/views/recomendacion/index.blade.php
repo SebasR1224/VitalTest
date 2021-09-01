@@ -41,7 +41,7 @@
                                                     <td>{{$list->tiempo}}</td>
                                                     <td class="td-actions text-right">
                                                         <a href="{{route('recomendacion.form', ['id'=>$list->id])}}" class="btn btn-warning"> <i class="material-icons">edit</i></a>
-                                                        <a href="{{route('recomendacion.show', ['id'=>$list->id])}}"  class="btn btn-success"><i class="material-icons">playlist_add_check_circle</i></a>
+                                                        <a href="{{route('recomendacion.show', ['id'=>$list->id])}}"  class="btn btn-white"><i class="material-icons">visibility</i></a>
                                                     </td>
                                                 </tr>
                                             </tbody>

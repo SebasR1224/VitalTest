@@ -21,7 +21,13 @@
                                                 <div class="card-block text-center text-white">
                                                     <div class="m-b-25"> <img src="https://img.icons8.com/bubbles/100/000000/user.png" class="img-radius" alt="User-Profile-Image"> </div>
                                                     <h6 class="f-w-600">{{$user->username}}</h6>
-                                                    <p>Gerente</p><i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
+                                                    <p>
+                                                        @forelse ($user->roles as $role)
+                                                            {{$role->name}}
+                                                        @empty
+                                                            Sin rol asignado
+                                                        @endforelse
+                                                    </p><i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
                                                     <p>{{$user->email}}</p><i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
                                                 </div>
                                             </div>
