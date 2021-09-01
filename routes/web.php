@@ -21,7 +21,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 // llamamos al controlador de usuarios para crear uno nuevo
-Route::get('/users/create/{id?}' , [App\Http\Controllers\UserController::class, 'create'])->name('users.create');
+Route::get('/users/create' , [App\Http\Controllers\UserController::class, 'create'])->name('users.create');
 Route::post('/users' , [App\Http\Controllers\UserController::class, 'store'])->name('users.store');
 Route::get('/users', [App\Http\Controllers\UserController::class, 'index'])->name('users.index');
 Route::get('/users/{id}', [App\Http\Controllers\UserController::class, 'show'])->name('users.show');
@@ -52,3 +52,6 @@ Route::post('/profiles/{id}' , [App\Http\Controllers\ProfileController::class, '
 
 //Permisos
 Route::resource('permissions', App\Http\Controllers\PermissionController::class);
+
+//Roles
+Route::resource('roles', App\Http\Controllers\RoleController::class);

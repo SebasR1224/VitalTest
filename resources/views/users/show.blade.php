@@ -1,4 +1,6 @@
 @extends('layouts.main', ['activePage' => 'users', 'titlePage' => 'Detalles de usuario' ])
+    <!-- CSS Users -->
+    <link rel="stylesheet" href="{{asset('css/user/UserStyle.css')}}">
 @section('content')
 <div class="content">
     <div class="container-fluid">

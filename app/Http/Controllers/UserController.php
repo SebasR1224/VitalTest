@@ -6,6 +6,7 @@ use App\Http\Requests\UserCreateRequest;
 use App\Models\Profile;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
 {
@@ -18,19 +19,20 @@ class UserController extends Controller
     }
 
     public function create($id=null){
-        $user = new User();
-        if($id != null){
-            $user = User::findOrFail($id);
-        }
-        return view('users.create' , compact('user'));
+        $roles = Role::all()->pluck('name', 'id');
+        return view('users.create' , compact('roles'));
     }
 
 
     public function store(UserCreateRequest $request){
-        User::create($request->only('username' , 'email')
+        $user = User::create($request->only('username' , 'email')
         + [
             'password'=>bcrypt($request->input('password')),
         ]);
+
+        $roles = $request->input('roles', []);
+
+        $user->syncRoles($roles);
         return redirect()->route('users.index')->with('message_add', 'Usuario creado con exito');
     }
 

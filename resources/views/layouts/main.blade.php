@@ -16,8 +16,7 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!-- CSS Files -->
     <link href="{{ asset('css/material-dashboard.css?v=2.1.1') }}" rel="stylesheet" />
-    <!-- CSS Users -->
-    <link rel="stylesheet" href="{{asset('css/user/UserStyle.css')}}">
+
     </head>
     <body class="{{ $class ?? '' }}">
         @auth()

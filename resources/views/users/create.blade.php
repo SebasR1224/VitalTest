@@ -4,12 +4,12 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <form action="{{ $user->id ? route('users.update' , $user->id) : route('users.store') }}" method="post" class="form-horizontal">
+                    <form action="{{route('users.store') }}" method="post" class="form-horizontal">
                         @csrf
                         <div class="card">
                             <div class="card-header card-header-primary">
-                                <h4>{{$user->id ? 'Editar usuarios' : 'Crear nuevo usuario' }}</h4>
-                                <p class="card-category text-light">Complete todos los campos para {{$user->id ? 'editar ' : 'crear '}}un usuario</p>
+                                <h4>Crear nuevo usuario</h4>
+                                <p class="card-category text-light">Complete todos los campos para crear un usuario</p>
                             </div>
                             <div class="card-body">
                                 @if ($errors->any())
@@ -28,7 +28,7 @@
                                         </div>
                                         <label for="username" class="col-sm-2 col-form-label">Nombre de usuario</label>
                                         <div class="col-sm-7">
-                                            <input type="text" class="form-control" id="username" name="username" placeholder="Nombre de usuario" value="{{ @old('username', $user->username)}}" autofocus>
+                                            <input type="text" class="form-control" id="username" name="username" placeholder="Nombre de usuario" autofocus>
                                         </div>
                                     </div>
                                 </div>
@@ -39,7 +39,7 @@
                                         </div>
                                         <label for="email" class="col-sm-2 col-form-label">Correo</label>
                                         <div class="col-sm-7">
-                                            <input type="email" class="form-control" id="email" name="email" placeholder="Correo electrónico" value="{{ @old('email', $user->email)}}" >
+                                            <input type="email" class="form-control" id="email" name="email" placeholder="Correo electrónico">
                                         </div>
                                     </div>
                                 </div>
@@ -50,13 +50,47 @@
                                         </div>
                                         <label for="password" class="col-sm-2 col-form-label">Contraseña</label>
                                         <div class="col-sm-7">
-                                            <input type="password" class="form-control" id="password" name="password" placeholder="{{$user->id ? 'Actualizar este campo es opcional' : 'Contraseña' }}">
+                                            <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label for="roles" class="col-sm-2 col-form-label">Roles</label>
+                                    <div class="col-sm-7">
+                                        <div class="form-group">
+                                            <div class="tab-content">
+                                                <div class="tab-pane active">
+                                                    <table class="table">
+                                                        <tbody>
+                                                            @foreach ($roles as $id => $role)
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="form-check">
+                                                                        <label class="form-check-label">
+                                                                            <input class="form-check-input" type="checkbox" name="roles[]"
+                                                                                value="{{ $id }}"
+                                                                            >
+                                                                            <span class="form-check-sign">
+                                                                                <span class="check"></span>
+                                                                            </span>
+                                                                        </label>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    {{ $role }}
+                                                                </td>
+                                                            </tr>
+                                                            @endforeach
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="card-footer ml-auto mr-auto">
-                                <button type="submit" class="{{$user->id ? 'btn btn-warning' : 'btn btn-success'}}">{{$user->id ? 'Actualizar usuario' :'Agregar usuario' }}</button>
+                                <button type="submit" class="btn btn-warning">Añadir</button>
                             </div>
                         </div>
                     </form>
