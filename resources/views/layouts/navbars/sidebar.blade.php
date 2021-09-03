@@ -83,16 +83,16 @@
             <p>{{ __('Roles') }}</p>
         </a>
       </li>
-      <li class="nav-item{{ $activePage == 'icons' ? ' active' : '' }}">
-        <a class="nav-link" href="#">
+      <li class="nav-item{{ $activePage == 'inventario' ? ' active' : '' }}">
+        <a class="nav-link" href="{{route('medicamentos.index')}}">
           <i class="material-icons">bubble_chart</i>
-          <p>{{ __('Icons') }}</p>
+          <p>{{ __('Inventario') }}</p>
         </a>
       </li>
-      <li class="nav-item{{ $activePage == 'map' ? ' active' : '' }}">
-        <a class="nav-link" href="#">
+      <li class="nav-item{{ $activePage == 'commerce' ? ' active' : '' }}">
+        <a class="nav-link" href="{{route('medicamento.commerce')}}">
           <i class="material-icons">location_ons</i>
-            <p>{{ __('Maps') }}</p>
+            <p>{{ __('Medicamentos') }}</p>
         </a>
       </li>
       <li class="nav-item{{ $activePage == 'notifications' ? ' active' : '' }}">

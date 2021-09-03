@@ -19,17 +19,17 @@ class CreateMedicamentosTable extends Migration
             $table->double('precioNormal' , 10,2);
             $table->integer('descuento');
             $table->string('estado', 30 );
-
-            $table->unsignedBigInteger('labo_id')->nullable();
-            $table->unsignedBigInteger('category_id')->nullable();
+            $table->string('imagen')->nullable();
+            $table->unsignedBigInteger('laboratorio_id')->nullable();
+            $table->unsignedBigInteger('categoria_id')->nullable();
 
             $table->timestamps();
 
-            $table->foreign('labo_id')->references('id')->on('laboratorios')
+            $table->foreign('laboratorio_id')->references('id')->on('laboratorios')
             ->onDelete('set null')
             ->onUpdate('cascade');
 
-            $table->foreign('category_id')->references('id')->on('categorias')
+            $table->foreign('categoria_id')->references('id')->on('categorias')
             ->onDelete('set null')
             ->onUpdate('cascade');
         });

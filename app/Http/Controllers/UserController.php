@@ -18,7 +18,7 @@ class UserController extends Controller
         return view('users.index' , compact('users'));
     }
 
-    public function create($id=null){
+    public function create(){
         $roles = Role::all()->pluck('name', 'id');
         return view('users.create' , compact('roles'));
     }
@@ -81,7 +81,7 @@ class UserController extends Controller
     //profile
     public function profile($id){
             $user = User::find($id);
-            $datos = $user->profile;
+            $datos = $user->profile ? $user->profile : new Profile() ;
         return view('users.profile' , compact('datos', 'user'));
     }
 }

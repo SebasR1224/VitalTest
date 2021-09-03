@@ -48,16 +48,12 @@
                             <h6>Solución con medicamenstos</h6>
                             <p class="text-black-50 content mb-5">para la recomendación <strong>{{$recomendacion->nombreRecomendacion}}</strong> los medicamentos que aliviaran el malestar son</p>
                             <div class="d-flex flex-row">
-                                <div class="mr-4"> <span>Medicamento1</span>
-                                    <div class="mt-2"> <span class="alpha alpha-red">Medicamento1</span></div>
+                                @forelse ($recomendacion->medicamentos as $medicamento )
+                                    <div class="mr-4"> <span>{{$medicamento->nombreMedicamento}}</span></div>
+                                @empty
+                                    <div class="mr-4"> <span>Aún no se han añadido medicmantos</span></div>
+                                @endforelse
 
-                                </div>
-                                <div class="mr-4"> <span>Medicamento3</span>
-                                    <div class="mt-2"> <span class="text-black-50">Medicamento3</span> </div>
-                                </div>
-                                <div class="mr-4"> <span>Medicamento3</span>
-                                    <div class="mt-2"> <span class="text-black-50">Medicamento3</span> </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -140,7 +136,13 @@
                                                 <div class="progress-1 align-items-center">
                                                     <div class="d-flex flex-row">
                                                         <ul class="list-group list-group-flush">
-                                                            <li class="list-group-item">{{$recomendacion->imc->nombreImc}}</li>
+                                                            <li class="list-group-item">
+                                                                @forelse ($recomendacion->enfermedades as $enfermedad)
+                                                                <span class="badge badge-info">{{$enfermedad->nombreEnfermedad}}</span>
+                                                                @empty
+                                                                    Sin contraindicaciones
+                                                                @endforelse
+                                                            </li>
                                                         </ul>
                                                     </div>
                                                 </div>

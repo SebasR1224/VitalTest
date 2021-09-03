@@ -14,7 +14,7 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-12 text-right">
-                                            <a href="{{route('recomendacion.form')}}" class="btn btn-success"> Agregar</a>
+                                            <a href="{{route('recomendacion.create')}}" class="btn btn-success"> Agregar</a>
                                         </div>
                                     </div>
                                     <div class="table-responsive">
@@ -40,7 +40,7 @@
                                                     <td>{{$list->frecuencia}}</td>
                                                     <td>{{$list->tiempo}}</td>
                                                     <td class="td-actions text-right">
-                                                        <a href="{{route('recomendacion.form', ['id'=>$list->id])}}" class="btn btn-warning"> <i class="material-icons">edit</i></a>
+                                                        <a href="{{route('recomendacion.edit', ['id'=>$list->id])}}" class="btn btn-warning"> <i class="material-icons">edit</i></a>
                                                         <a href="{{route('recomendacion.show', ['id'=>$list->id])}}"  class="btn btn-white"><i class="material-icons">visibility</i></a>
                                                     </td>
                                                 </tr>

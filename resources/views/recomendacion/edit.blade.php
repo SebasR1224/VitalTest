@@ -1,4 +1,4 @@
-@extends('layouts.main' , ['activePage' =>'partes' , 'titlePage' => 'Gestion de recomendaciones' ])
+@extends('layouts.main' , ['activePage' =>'partes' , 'titlePage' => 'Editar recomendaciones' ])
 @section('content')
     <div class="content">
         <div class="container-fluid">
@@ -8,8 +8,8 @@
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header card-header-primary">
-                                    <h4 class="card-title">{{$recomendacion->id ? 'Editar recomendación' : 'Registar nueva recomendación'}}</h4>
-                                    <p class="card-category">Complete todos los campos para {{$recomendacion->id ? 'editar ' : 'crear '}}la recomendacion</p>
+                                    <h4 class="card-title">Editar recomendación</h4>
+                                    <p class="card-category">Complete todos los campos para editar la recomendacion</p>
                                 </div>
                                 <div class="card-body">
                                 @if ($errors->any())
@@ -24,8 +24,9 @@
                                         </button>
                                       </div>
                                 @endif
-                                    <form action="{{$recomendacion->id ? route('recomendacion.update' , $recomendacion->id) : route('recomendacion.create')}}" method="post" class="form-horizontal">
+                                    <form action="{{route('recomendacion.update' , $recomendacion->id)}}" method="post" class="form-horizontal">
                                         @csrf
+                                        @method('PUT')
                                         <div class="form">
                                             <div class="row">
                                                 <div class="col-md-6 mt-md-0 mt-3"> <label>Nombre recomendación</label> <input type="text" name="nombreRecomendacion" value="{{ @old('nombreRecomendacion', $recomendacion->nombreRecomendacion)}}" class="form-control" autofocus></div>
@@ -71,8 +72,42 @@
                                                 </div>
                                                     <div class="col-md-6 mt-md-0 mt-3"> <label>Informacíon adicional</label> <input type="text" name="informacionAdicional" value="{{ @old('informacionAdicional', $recomendacion->informacionAdicional)}}" class="form-control" ></div>
                                             </div>
+                                            {{-- <div class="row">
+                                                <label for="roles" class="col-sm-2 col-form-label">Contraindicaciones</label>
+                                                <div class="col-sm-7">
+                                                    <div class="form-group">
+                                                        <div class="tab-content">
+                                                            <div class="tab-pane active">
+                                                                <table class="table">
+                                                                    <tbody>
+                                                                        @foreach ($roles as $id => $role)
+                                                                        <tr>
+                                                                            <td>
+                                                                                <div class="form-check">
+                                                                                    <label class="form-check-label">
+                                                                                        <input class="form-check-input" type="radio" name="roles[]"
+                                                                                            value="{{ $id }}"
+                                                                                        >
+                                                                                        <span class="form-check-sign">
+                                                                                            <span class="check"></span>
+                                                                                        </span>
+                                                                                    </label>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>
+                                                                                {{ $role }}
+                                                                            </td>
+                                                                        </tr>
+                                                                        @endforeach
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> --}}
                                             <div class="card-footer ml-auto mr-auto">
-                                                <button type="submit" class="btn {{$recomendacion->id ? 'btn-warning' : 'btn-success'}}">{{$recomendacion->id ? 'Aditar recomendación' : 'Guardar recomendación'}}</button>
+                                                <button type="submit" class="btn btn-warning">Aditar recomendación</button>
                                             </div>
                                         </div>
                                     </form>
@@ -87,5 +122,3 @@
         </div>
     </div>
 @endsection
-
-

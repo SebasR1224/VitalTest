@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateRecomendacionRequest;
+use App\Models\Enfermedad;
 use App\Models\Imc;
 use App\Models\ParteCuerpo;
 use App\Models\Recomendacion;
@@ -24,21 +25,35 @@ class RecomendacionController extends Controller
 
     //CRUD recomendacion
 
-    function form($id=null){
+    function create(){
         $recomendacion = new Recomendacion();
         $partes = ParteCuerpo::orderBy('nombreParte')->get();
         $sintomas = Sintoma::orderBy('nombreSintoma')->get();
         $imcs = Imc::orderBy('nombreImc')->get();
-        if($id != null){
-            $recomendacion = Recomendacion::findOrFail($id);
-        }
-        return view('recomendacion.form', ['recomendacion' => $recomendacion , 'partes' =>$partes, 'sintomas' => $sintomas, 'imcs'=>$imcs]);
+
+        $enfermedades = Enfermedad::all()->pluck('nombreEnfermedad', 'id');
+        return view('recomendacion.create', compact('recomendacion', 'partes', 'sintomas', 'imcs', 'enfermedades'));
     }
 
-    public function create(CreateRecomendacionRequest $request){
+    public function edit(Request $request, $id)
+    {
+        $partes = ParteCuerpo::orderBy('nombreParte')->get();
+        $sintomas = Sintoma::orderBy('nombreSintoma')->get();
+        $imcs = Imc::orderBy('nombreImc')->get();
+        $recomendacion = Recomendacion::findOrFail($id);
+        return view('recomendacion.edit',  compact('recomendacion', 'partes', 'sintomas', 'imcs'));
+    }
+
+
+    public function store(CreateRecomendacionRequest $request){
         $recomendacion = Recomendacion::create($request->all());
+        $recomendacion->enfermedades()->sync($request->input(['enfermedades']));
         return redirect()->route('recomendacion.show', $recomendacion->id )->with('messageRecomendacion_add', 'Informacion ingresada con exito');
     }
+
+
+
+
     public function update(Request $request, $id){
 
         $request->validate(
@@ -58,6 +73,7 @@ class RecomendacionController extends Controller
         );
         $recomendacion=Recomendacion::findOrfail($id);
         $dataRecome = $request->all();
+
         $recomendacion->update($dataRecome);
         return redirect()->route('recomendacion.show', $recomendacion->id)->with('messageRecomendacion_add', 'Se han actualizado los campos');
     }

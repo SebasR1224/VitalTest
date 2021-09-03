@@ -18,10 +18,15 @@ class Recomendacion extends Model
         return $this->belongsTo(Imc::class);
     }
 
-    //relacion muchos a muchos
+    //relacion muchos a muchos contraindicaciones
 
     public function enfermedades(){
         return $this->belongsToMany(Enfermedad::class);
+    }
+
+    //relacion muchos a muchos medicamentos
+    public function medicamentos(){
+        return $this->belongsToMany(Medicamento::class);
     }
 
     protected $guarded = [];

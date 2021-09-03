@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Enfermedad extends Model
 {
     use HasFactory;
-    //relacion muchos a muchos
 
+    //relacion muchos a muchos
     public function recomendaciones(){
         return $this->belongsToMany(Recomendacion::class);
     }

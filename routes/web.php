@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Medicamento;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,6 +32,8 @@ Route::put('/users/{id}' , [App\Http\Controllers\UserController::class, 'update'
 
 //profile
 Route::get('/users/profile/{id}', [App\Http\Controllers\UserController::class, 'profile'])->name('users.profile');
+Route::post('/profiles' , [App\Http\Controllers\ProfileController::class, 'create'])->name('profile.create');
+Route::post('/profiles/{id}' , [App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
 
 
 
@@ -45,17 +48,21 @@ Route::get('/recomendaciones/sintomas', [App\Http\Controllers\SintomaController:
 Route::post('/recomendaciones/sintomas', [App\Http\Controllers\SintomaController::class, 'save'])->name('sintoma.save');
 
 //recomendaciones
+Route::get('/recomendaciones/create', [App\Http\Controllers\RecomendacionController::class, 'create'])->name('recomendacion.create');
+Route::post('/recomendaciones' , [App\Http\Controllers\RecomendacionController::class, 'store'])->name('recomendacion.store');
 Route::get('/recomendaciones', [App\Http\Controllers\RecomendacionController::class, 'index'])->name('recomendacion.index');
 Route::get('/recomendaciones/detalles/{id}', [App\Http\Controllers\RecomendacionController::class, 'show'])->name('recomendacion.show');
-Route::get('/recomendaciones/form/{id?}', [App\Http\Controllers\RecomendacionController::class, 'form'])->name('recomendacion.form');
-Route::post('/recomendaciones' , [App\Http\Controllers\RecomendacionController::class, 'create'])->name('recomendacion.create');
-Route::post('/recomendaciones/{id}' , [App\Http\Controllers\RecomendacionController::class, 'update'])->name('recomendacion.update');
+Route::get('/recomendaciones/{id}/edit', [App\Http\Controllers\RecomendacionController::class, 'edit'])->name('recomendacion.edit');
+Route::put('/recomendaciones/{id}' , [App\Http\Controllers\RecomendacionController::class, 'update'])->name('recomendacion.update');
 
-Route::post('/profiles' , [App\Http\Controllers\ProfileController::class, 'create'])->name('profile.create');
-Route::post('/profiles/{id}' , [App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
 
 //Permisos
 Route::resource('permissions', App\Http\Controllers\PermissionController::class);
 
 //Roles
 Route::resource('roles', App\Http\Controllers\RoleController::class);
+
+//medicamentos
+Route::resource('medicamentos', App\Http\Controllers\MedicamentoController::class);
+//commerce
+Route::get('/commerce', [App\Http\Controllers\MedicamentoController::class, 'commerce'])->name('medicamento.commerce');

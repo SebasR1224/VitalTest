@@ -15,13 +15,13 @@ class CreateEnfermedadRecomendacionTable extends Migration
     {
         Schema::create('enfermedad_recomendacion', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('enfer_id');
-            $table->unsignedBigInteger('recomen_id');
+            $table->unsignedBigInteger('enfermedad_id');
+            $table->unsignedBigInteger('recomendacion_id');
 
-            $table->foreign('enfer_id')->references('id')->on('enfermedads')
+            $table->foreign('enfermedad_id')->references('id')->on('enfermedads')
             ->onDelete('cascade')
             ->onUpdate('cascade');
-            $table->foreign('recomen_id')->references('id')->on('recomendacions')
+            $table->foreign('recomendacion_id')->references('id')->on('recomendacions')
             ->onDelete('cascade')
             ->onUpdate('cascade');
 
