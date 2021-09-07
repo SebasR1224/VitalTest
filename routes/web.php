@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\LaboratorioController;
+use App\Models\Laboratorio;
 use App\Models\Medicamento;
 use Illuminate\Support\Facades\Route;
 
@@ -54,6 +56,9 @@ Route::get('/recomendaciones', [App\Http\Controllers\RecomendacionController::cl
 Route::get('/recomendaciones/detalles/{id}', [App\Http\Controllers\RecomendacionController::class, 'show'])->name('recomendacion.show');
 Route::get('/recomendaciones/{id}/edit', [App\Http\Controllers\RecomendacionController::class, 'edit'])->name('recomendacion.edit');
 Route::put('/recomendaciones/{id}' , [App\Http\Controllers\RecomendacionController::class, 'update'])->name('recomendacion.update');
+Route::get('/search/partes',  [App\Http\Controllers\SearchController::class, 'partes'])->name('search.partes');
+
+
 
 
 //Permisos
@@ -64,5 +69,9 @@ Route::resource('roles', App\Http\Controllers\RoleController::class);
 
 //medicamentos
 Route::resource('medicamentos', App\Http\Controllers\MedicamentoController::class);
+
+//Laboratorio
+Route::resource('laboratorios', LaboratorioController::class);
+
 //commerce
 Route::get('/commerce', [App\Http\Controllers\MedicamentoController::class, 'commerce'])->name('medicamento.commerce');

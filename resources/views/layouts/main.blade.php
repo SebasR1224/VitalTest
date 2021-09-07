@@ -16,7 +16,7 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!-- CSS Files -->
     <link href="{{ asset('css/material-dashboard.css?v=2.1.1') }}" rel="stylesheet" />
-
+    @yield('css')
     </head>
     <body class="{{ $class ?? '' }}">
         @auth()
@@ -34,5 +34,6 @@
         <script src="{{ asset('js/core/bootstrap-material-design.min.js') }}"></script>
         <script src="{{ asset('js/plugins/perfect-scrollbar.jquery.min.js') }}"></script>
         @stack('js')
+        @yield('js')
     </body>
 </html>

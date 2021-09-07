@@ -1,7 +1,8 @@
 @extends('layouts.main' , ['activePage' =>'partes' , 'titlePage' => 'Agregar una nueva recomendación' ])
 
 @section('css')
-    <link rel="stylesheet" href="{{asset('vendor/jquery-ui-1.12.1.custom/jquery-ui.min.css')}}">
+    {{-- Buscador --}}
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 @endsection
 
 @section('content')
@@ -33,19 +34,17 @@
                                         @csrf
                                         <div class="form">
                                             <div class="row">
-                                                <div class="col-md-6 mt-md-0 mt-3"> <label>Nombre recomendación</label> <input type="text" name="nombreRecomendacion" value="{{@old('nombreRecomendacion', $recomendacion->nombreRecomendacion)}}" class="form-control" autofocus></div>
-                                                <div class="col-md-6 mt-md-0 mt-3"> <label>Parte del cuerpo</label>
-                                                    <select name="parte_id" id="" class="form-control">
+                                                <div class="col-md-4 mt-md-0 mt-3"> <label>Nombre recomendación</label> <input type="text" name="nombreRecomendacion" value="{{@old('nombreRecomendacion', $recomendacion->nombreRecomendacion)}}" class="form-control" autofocus></div>
+                                                <div class="col-md-4 mt-md-0 mt-3"> <label>Parte del cuerpo</label>
+                                                    <select name="parte_id" id="partes" class="form-control">
                                                         <option value="">Seleccione...</option>
                                                         @foreach ($partes as $parte)
-                                                            <option value="{{$parte->id}}">{{$parte->nombreParte}}</option>
+                                                            <option value="{{$parte->id}}" >{{$parte->nombreParte}}</option>
                                                         @endforeach
                                                     </select>
                                                 </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-6 mt-md-0 mt-3"> <label>Sintoma</label>
-                                                    <select name="sintoma_id" id="" class="form-control">
+                                                <div class="col-md-4 mt-md-0 mt-3"> <label>Sintoma</label>
+                                                    <select name="sintoma_id" id="sintomas" class="form-control">
                                                         <option value="">Seleccione...</option>
                                                         @foreach ($sintomas as $sintoma)
                                                             <option value="{{$sintoma->id}}" >{{$sintoma->nombreSintoma}}</option>
@@ -53,52 +52,20 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="row">
-                                                <label for="" class="col-sm-2 col-form-label">Soluciones</label>
-                                                <div class="col-sm-7">
-                                                    <div class="form-group">
-                                                        <div class="tab-content">
-                                                            <div class="tab-pane active">
-                                                                <table class="table">
-                                                                    <tbody>
-                                                                        @foreach ($medicamentos as $id => $medicamento)
-                                                                        <tr>
-                                                                            <td>
-                                                                                <div class="form-check">
-                                                                                    <label class="form-check-label">
-                                                                                        <input class="form-check-input" type="checkbox" name="medicamentos[]"
-                                                                                            value="{{ $id }}"
-                                                                                        >
-                                                                                        <span class="form-check-sign">
-                                                                                            <span class="check"></span>
-                                                                                        </span>
-                                                                                    </label>
-                                                                                </div>
-                                                                            </td>
-                                                                            <td>
-                                                                                {{$medicamento}}
-                                                                            </td>
-                                                                        </tr>
-                                                                        @endforeach
-                                                                    </tbody>
-                                                                </table>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            <hr>
                                             <div class="row">
                                                 <div class="col-md-4 mt-md-0 mt-3"> <label>Dosis</label> <input type="text" name="dosis" value="{{ @old('dosis', $recomendacion->dosis)}}" class="form-control" ></div>
                                                 <div class="col-md-4 mt-md-0 mt-3"> <label>Frecuencia</label> <input type="text" name="frecuencia" value="{{ @old('frecuencia', $recomendacion->frecuencia)}}" class="form-control"></div>
                                                 <div class="col-md-4 mt-md-0 mt-3"> <label>Tiempo</label><input type="text" name="tiempo" value="{{ @old('tiempo', $recomendacion->tiempo)}}" class="form-control"></div>
                                             </div>
                                             <div class="row">
-                                                <div class="col-md-3 mt-md-0 mt-3"> <label>Intensidad mínima</label> <input type="text" name="intensidadMin" value="{{ @old('intensidadMin', $recomendacion->intensidadMin)}}" class="form-control" ></div>
-                                                <div class="col-md-3 mt-md-0 mt-3"> <label>Intensidad maxima</label> <input type="text" name="intensidadMax" value="{{ @old('intensidadMax', $recomendacion->intensidadMax)}}" class="form-control"></div>
-                                                <div class="col-md-3 mt-md-0 mt-3"> <label>Edad mínima</label><input type="text" name="edadMin" value="{{ @old('edadMin', $recomendacion->edadMin)}}" class="form-control"></div>
-                                                <div class="col-md-3 mt-md-0 mt-3"> <label>Edad maxima</label><input type="text" name="edadMax" value="{{ @old('edadMax', $recomendacion->edadMax)}}" class="form-control"></div>
+                                                <div class="col-md-3 mt-md-0 mt-3"> <label>Intensidad mínima</label> <input type="number" name="intensidadMin" value="{{ @old('intensidadMin', $recomendacion->intensidadMin)}}" class="form-control" ></div>
+                                                <div class="col-md-3 mt-md-0 mt-3"> <label>Intensidad maxima</label> <input type="number" name="intensidadMax" value="{{ @old('intensidadMax', $recomendacion->intensidadMax)}}" class="form-control"></div>
+                                                <div class="col-md-3 mt-md-0 mt-3"> <label>Edad mínima</label><input type="number" name="edadMin" value="{{ @old('edadMin', $recomendacion->edadMin)}}" class="form-control"></div>
+                                                <div class="col-md-3 mt-md-0 mt-3"> <label>Edad maxima</label><input type="number" name="edadMax" value="{{ @old('edadMax', $recomendacion->edadMax)}}" class="form-control"></div>
                                                 <input type="hidden" name="estado" value="Activo">
                                             </div>
+                                            <hr>
                                             <div class="row">
                                                 <div class="col-md-3 mt-md-0 mt-3"> <label>Imc</label>
                                                     <select name="imc_id" id="" class="form-control">
@@ -108,40 +75,25 @@
                                                         @endforeach
                                                     </select>
                                                 </div>
-                                                    <div class="col-md-6 mt-md-0 mt-3"> <label>Informacíon adicional</label> <input type="text" name="informacionAdicional" value="{{ @old('informacionAdicional', $recomendacion->informacionAdicional)}}" class="form-control" ></div>
+                                                <div class="col-md-6 mt-md-0 mt-3"> <label>Informacíon adicional</label> <input type="text" name="informacionAdicional" value="{{ @old('informacionAdicional', $recomendacion->informacionAdicional)}}" class="form-control" ></div>
                                             </div>
+                                            <hr>
                                             <div class="row">
-                                                <label for="" class="col-sm-2 col-form-label">Contraindicaciones</label>
-                                                <div class="col-sm-7">
-                                                    <div class="form-group">
-                                                        <div class="tab-content">
-                                                            <div class="tab-pane active">
-                                                                <table class="table">
-                                                                    <tbody>
-                                                                        @foreach ($enfermedades as $id => $enfermedad)
-                                                                        <tr>
-                                                                            <td>
-                                                                                <div class="form-check">
-                                                                                    <label class="form-check-label">
-                                                                                        <input class="form-check-input" type="checkbox" name="enfermedades[]"
-                                                                                            value="{{ $id }}"
-                                                                                        >
-                                                                                        <span class="form-check-sign">
-                                                                                            <span class="check"></span>
-                                                                                        </span>
-                                                                                    </label>
-                                                                                </div>
-                                                                            </td>
-                                                                            <td>
-                                                                                {{$enfermedad}}
-                                                                            </td>
-                                                                        </tr>
-                                                                        @endforeach
-                                                                    </tbody>
-                                                                </table>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                <div class="col-md-6 mt-md-0 mt-3"> <label>Solución para el sintoma</label>
+                                                    <select name="medicamentos[]" id="medicamentos" class="form-control" multiple="multiple">
+                                                        <option value="">Seleccione...</option>
+                                                        @foreach ($medicamentos as $id => $medicamento)
+                                                            <option value="{{$id}}">{{$medicamento}}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-6 mt-md-0 mt-3"> <label>Contraindicaciones</label>
+                                                    <select name="enfermedades[]" id="enfermedades" class="form-control" multiple="multiple">
+                                                        <option value="">Seleccione...</option>
+                                                        @foreach ($enfermedades as $id => $enfermedad)
+                                                            <option value="{{$id}}"> {{$enfermedad}}</option>
+                                                        @endforeach
+                                                    </select>
                                                 </div>
                                             </div>
                                             <div class="card-footer ml-auto mr-auto">
@@ -162,6 +114,14 @@
 @endsection
 
 @section('js')
-    <script src="{{asset('vendor/jquery-ui-1.12.1.custom/jquery-ui.min.js')}}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#sintomas').select2();
+            $('#partes').select2();
+            $('#medicamentos').select2();
+            $('#enfermedades').select2();
+        })
+    </script>
 @endsection
 

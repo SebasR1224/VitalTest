@@ -42,9 +42,15 @@
                                                     <td>{{$user->email}}</td>
                                                     <td>
                                                         @forelse ($user->roles as $role )
+                                                            @if ($role->name == "Gerente")
                                                             <span class="badge badge-info">{{$role->name}}</span>
+                                                            @elseif ($role->name == "Farmacéutico")
+                                                            <span class="badge badge-warning text-white">{{$role->name}}</span>
+                                                            @else
+                                                            <span class="badge badge-success">{{$role->name}}</span>
+                                                            @endif
                                                         @empty
-                                                        <span class="badge badge-danger">Usuario sin rol</span>
+                                                            <span class="badge badge-danger">Usuario sin rol</span>
                                                         @endforelse
                                                     </td>
                                                     <td>{{$user->created_at}}</td>
@@ -52,9 +58,13 @@
                                                         <a href="{{route('users.show', ['id'=>$user->id])}}"  class="btn btn-info"><i class="material-icons">contacts</i></a>
                                                         <a href="{{route('users.edit', ['id'=> $user->id]) }}" class="btn btn-warning"> <i class="material-icons">edit</i></a>
 
-                                                        <button class="btn btn-success" type="button">
-                                                            <i class="material-icons">arrow_circle_up</i>
-                                                        </button>
+                                                        @foreach ($user->roles as $role)
+                                                            @if ($role->name == "Farmacéutico")
+                                                            <button class="btn btn-success" type="button">
+                                                                <i class="material-icons">arrow_circle_up</i>
+                                                            </button>
+                                                            @endif
+                                                        @endforeach
                                                     </td>
                                                 </tr>
                                             </tbody>

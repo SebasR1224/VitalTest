@@ -49,7 +49,10 @@
                             <p class="text-black-50 content mb-5">para la recomendación <strong>{{$recomendacion->nombreRecomendacion}}</strong> los medicamentos que aliviaran el malestar son</p>
                             <div class="d-flex flex-row">
                                 @forelse ($recomendacion->medicamentos as $medicamento )
-                                    <div class="mr-4"> <span>{{$medicamento->nombreMedicamento}}</span></div>
+                                    <div class="mr-4">
+                                        <img src="/imagen/{{$medicamento->imagen}}" width="50px">
+                                        <span>{{$medicamento->nombreMedicamento}}</span>
+                                    </div>
                                 @empty
                                     <div class="mr-4"> <span>Aún no se han añadido medicmantos</span></div>
                                 @endforelse

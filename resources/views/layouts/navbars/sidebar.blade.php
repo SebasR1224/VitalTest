@@ -95,6 +95,12 @@
             <p>{{ __('Medicamentos') }}</p>
         </a>
       </li>
+      <li class="nav-item{{ $activePage == 'laboratorio' ? ' active' : '' }}">
+        <a class="nav-link" href="{{route('laboratorios.index')}}">
+          <i class="material-icons">location_ons</i>
+            <p>{{ __('Laboratorio') }}</p>
+        </a>
+      </li>
       <li class="nav-item{{ $activePage == 'notifications' ? ' active' : '' }}">
         <a class="nav-link" href="#">
           <i class="material-icons">notifications</i>
