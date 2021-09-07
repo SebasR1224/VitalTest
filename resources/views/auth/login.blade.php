@@ -8,7 +8,6 @@
     <div class="col-lg-4 col-md-6 col-sm-8 ml-auto mr-auto">
       <form class="form" method="POST" action="{{ route('login') }}">
         @csrf
-
         <div class="card card-login card-hidden mb-3">
           <div class="card-header card-header-primary text-center">
             <h4 class="card-title"><strong>{{ __('Inicio') }}</strong></h4>
@@ -27,7 +26,7 @@
                 <div class="input-group">
                   <div class="input-group-prepend">
                     <span class="input-group-text">
-                      <i class="material-icons">account_circle</i>
+                      <i class="material-icons">person_outline</i>
                     </span>
                   </div>
                   <input type="text" name="username" class="form-control" placeholder="{{ __('Nombre usuario o Correo...') }}" value="{{ old('username', null) }}" required autocomplete="username" autofocus>

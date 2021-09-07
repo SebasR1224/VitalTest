@@ -1,4 +1,9 @@
 @extends('layouts.main' , ['activePage' =>'partes' , 'titlePage' => 'Agregar una nueva recomendación' ])
+
+@section('css')
+    <link rel="stylesheet" href="{{asset('vendor/jquery-ui-1.12.1.custom/jquery-ui.min.css')}}">
+@endsection
+
 @section('content')
     <div class="content">
         <div class="container-fluid">
@@ -49,6 +54,40 @@
                                                 </div>
                                             </div>
                                             <div class="row">
+                                                <label for="" class="col-sm-2 col-form-label">Soluciones</label>
+                                                <div class="col-sm-7">
+                                                    <div class="form-group">
+                                                        <div class="tab-content">
+                                                            <div class="tab-pane active">
+                                                                <table class="table">
+                                                                    <tbody>
+                                                                        @foreach ($medicamentos as $id => $medicamento)
+                                                                        <tr>
+                                                                            <td>
+                                                                                <div class="form-check">
+                                                                                    <label class="form-check-label">
+                                                                                        <input class="form-check-input" type="checkbox" name="medicamentos[]"
+                                                                                            value="{{ $id }}"
+                                                                                        >
+                                                                                        <span class="form-check-sign">
+                                                                                            <span class="check"></span>
+                                                                                        </span>
+                                                                                    </label>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>
+                                                                                {{$medicamento}}
+                                                                            </td>
+                                                                        </tr>
+                                                                        @endforeach
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
                                                 <div class="col-md-4 mt-md-0 mt-3"> <label>Dosis</label> <input type="text" name="dosis" value="{{ @old('dosis', $recomendacion->dosis)}}" class="form-control" ></div>
                                                 <div class="col-md-4 mt-md-0 mt-3"> <label>Frecuencia</label> <input type="text" name="frecuencia" value="{{ @old('frecuencia', $recomendacion->frecuencia)}}" class="form-control"></div>
                                                 <div class="col-md-4 mt-md-0 mt-3"> <label>Tiempo</label><input type="text" name="tiempo" value="{{ @old('tiempo', $recomendacion->tiempo)}}" class="form-control"></div>
@@ -72,7 +111,7 @@
                                                     <div class="col-md-6 mt-md-0 mt-3"> <label>Informacíon adicional</label> <input type="text" name="informacionAdicional" value="{{ @old('informacionAdicional', $recomendacion->informacionAdicional)}}" class="form-control" ></div>
                                             </div>
                                             <div class="row">
-                                                <label for="roles" class="col-sm-2 col-form-label">Contraindicaciones</label>
+                                                <label for="" class="col-sm-2 col-form-label">Contraindicaciones</label>
                                                 <div class="col-sm-7">
                                                     <div class="form-group">
                                                         <div class="tab-content">
@@ -122,4 +161,7 @@
     </div>
 @endsection
 
+@section('js')
+    <script src="{{asset('vendor/jquery-ui-1.12.1.custom/jquery-ui.min.js')}}"></script>
+@endsection
 

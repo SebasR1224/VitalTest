@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CreateRecomendacionRequest;
 use App\Models\Enfermedad;
 use App\Models\Imc;
+use App\Models\Medicamento;
 use App\Models\ParteCuerpo;
 use App\Models\Recomendacion;
 use App\Models\Sintoma;
@@ -32,7 +33,8 @@ class RecomendacionController extends Controller
         $imcs = Imc::orderBy('nombreImc')->get();
 
         $enfermedades = Enfermedad::all()->pluck('nombreEnfermedad', 'id');
-        return view('recomendacion.create', compact('recomendacion', 'partes', 'sintomas', 'imcs', 'enfermedades'));
+        $medicamentos = Medicamento::all()->pluck('nombreMedicamento', 'id');
+        return view('recomendacion.create', compact('recomendacion', 'partes', 'sintomas', 'imcs', 'enfermedades', 'medicamentos'));
     }
 
     public function edit(Request $request, $id)
@@ -46,8 +48,15 @@ class RecomendacionController extends Controller
 
 
     public function store(CreateRecomendacionRequest $request){
-        $recomendacion = Recomendacion::create($request->all());
-        $recomendacion->enfermedades()->sync($request->input(['enfermedades']));
+        $recomendacion = Recomendacion::create($request->only('nombreRecomendacion', 'parte_id', 'sintoma_id',
+                                                              'dosis', 'frecuencia', 'tiempo', 'intensidadMin',
+                                                              'intensidadMax','edadMin', 'edadMax', 'imc_id',
+                                                              'informacionAdicional', 'estado'));
+        $enfermedades = $request->input('enfermedades', []);
+        $recomendacion->enfermedades()->sync($enfermedades);
+
+        $medicamentos = $request->input('medicamentos', []);
+        $recomendacion->medicamentos()->sync($medicamentos);
         return redirect()->route('recomendacion.show', $recomendacion->id )->with('messageRecomendacion_add', 'Informacion ingresada con exito');
     }
 

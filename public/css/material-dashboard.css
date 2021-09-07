@@ -8699,7 +8699,7 @@ a.text-success:focus {
 
 a.text-info:hover,
 a.text-info:focus {
-  color: #008fa1 !important;
+  color: #106eea !important;
 }
 
 .text-warning {
@@ -13770,7 +13770,7 @@ h2.title {
 }
 
 .text-info {
-  color: #00bcd4 !important;
+  color: #73D8D3 !important;
 }
 
 .text-rose {
@@ -16780,7 +16780,7 @@ label {
 .card.bg-primary,
 .card.card-rotate.bg-primary .front,
 .card.card-rotate.bg-primary .back {
-  background: linear-gradient(60deg, #00c3ff, #0540af);
+  background: linear-gradient(60deg, #73D8D3, #106eea);
 }
 
 .card .card-header-info .card-icon,

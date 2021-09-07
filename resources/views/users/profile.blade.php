@@ -98,7 +98,7 @@
                                 <hr>
                                 <div class="row">
                                   <div class="col-sm-3">
-                                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editProfile{{ Auth::user()->id}}">Editar información</button>
+                                    <button type="button" class="btn {{$datos->id ? "btn-warning" : "btn-success"}}" data-toggle="modal" data-target="#editProfile{{ Auth::user()->id}}">{{$datos->id ? "Editar mi perfil" : "Completar mis datos"}}</button>
                                   </div>
                                 </div>
                               </div>
@@ -130,7 +130,7 @@
                 <div class="row mt-3">
                     <div class="col-md-6">
                         <select name="tipoDocumento" class="form-control">
-                            <option value="0" selected>Tipo de documento</option>
+                            <option value="" selected>Tipo de documento</option>
                             <option value="TI">Targeta de identidad</option>
                             <option value="CC">Cedula de ciudadania</option>
                             <option value="PS">Pasaporte</option>
