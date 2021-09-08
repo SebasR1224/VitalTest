@@ -61,7 +61,13 @@ Route::put('/recomendaciones/{id}' , [App\Http\Controllers\RecomendacionControll
 Route::get('/search/partes',  [App\Http\Controllers\SearchController::class, 'partes'])->name('search.partes');
 
 
+//laboratorio
+Route::get('/laboratorios', [App\Http\Controllers\LaboratorioController::class, 'index'])->name('laboratorios.index');
+Route::post('/laboratorios', [App\Http\Controllers\LaboratorioController::class, 'save'])->name('laboratorio.save');
 
+//categoria
+Route::get('/categorias', [App\Http\Controllers\CategoriaController::class, 'index'])->name('categorias.index');
+Route::post('/categorias', [App\Http\Controllers\CategoriaController::class, 'save'])->name('categoria.save');
 
 //Permisos
 Route::resource('permissions', App\Http\Controllers\PermissionController::class);
@@ -71,9 +77,6 @@ Route::resource('roles', App\Http\Controllers\RoleController::class);
 
 //medicamentos
 Route::resource('medicamentos', App\Http\Controllers\MedicamentoController::class);
-
-//Laboratorio
-Route::resource('laboratorios', LaboratorioController::class);
 
 //commerce
 Route::get('/commerce', [App\Http\Controllers\MedicamentoController::class, 'commerce'])->name('medicamento.commerce');

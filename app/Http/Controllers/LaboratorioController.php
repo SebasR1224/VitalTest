@@ -18,69 +18,28 @@ class LaboratorioController extends Controller
         return view('laboratorio.index', compact('lists'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+    public function save(Request $request){
+
+        $request->validate([
+            'nombreLaboratorio' => ['required','min:5','max:50', 'unique:laboratorios,nombreLaboratorio,'.$request->id]
+        ]);
+
+        $laboratorio = new Laboratorio();
+        $messageLaboratorio_add = "Laboratorio creado con exito";
+        if(intval($request->id)>0){
+            $laboratorio = Laboratorio::findOrFail($request->id);
+            $messageLaboratorio_add = "Campo editado con exito";
+        }
+
+
+
+        $laboratorio->nombreLaboratorio = $request->nombreLaboratorio;
+
+        $laboratorio->save();
+        return redirect()->back()->with('messageLaboratorio_add' , $messageLaboratorio_add);
+
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Laboratorio $laboratorio)
-    {
-        return view('laboratorio.edit',  compact('laboratorio'));
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

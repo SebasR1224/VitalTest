@@ -35,7 +35,7 @@
             </li>
             <li class="nav-item{{ $activePage == 'users' ? ' active' : '' }}">
               <a class="nav-link" href="{{route('users.index')}}">
-                <i class="material-icons">group_add </i>
+                <i class="material-icons">manage_accounts </i>
                 <span class="sidebar-normal"> {{ __('Usuarios') }} </span>
               </a>
             </li>
@@ -44,7 +44,6 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#testmedico" aria-expanded="true">
-
           <p>{{ __('Test médico') }}
             <b class="caret"></b>
           </p>
@@ -72,46 +71,51 @@
           </ul>
         </div>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="collapse" href="#medicamento" aria-expanded="true">
+          <p>{{ __('Medicamentos') }}
+            <b class="caret"></b>
+          </p>
+        </a>
+        <div class="collapse show" id="medicamento">
+          <ul class="nav">
+            <li class="nav-item{{ $activePage == 'inventario' ? ' active' : '' }}">
+                <a class="nav-link" href="{{route('medicamentos.index')}}">
+                  <i class="material-icons">inventory_2</i>
+                  <p>{{ __('Inventario') }}</p>
+                </a>
+              </li>
+              <li class="nav-item{{ $activePage == 'commerce' ? ' active' : '' }}">
+                <a class="nav-link" href="{{route('medicamento.commerce')}}">
+                  <i class="material-icons">healing</i>
+                    <p>{{ __('Medicamentos') }}</p>
+                </a>
+              </li>
+              <li class="nav-item{{ $activePage == 'laboratorios' ? ' active' : '' }}">
+                <a class="nav-link" href="{{route('laboratorios.index')}}">
+                  <i class="material-icons">science</i>
+                    <p>{{ __('Laboratorio') }}</p>
+                </a>
+              </li>
+              <li class="nav-item{{ $activePage == 'categorias' ? ' active' : '' }}">
+                <a class="nav-link" href="{{route('categorias.index')}}">
+                  <i class="material-icons">category</i>
+                    <p>{{ __('Categorias') }}</p>
+                </a>
+              </li>
+          </ul>
+        </div>
+      </li>
       <li class="nav-item{{ $activePage == 'permissions' ? ' active' : '' }}">
         <a class="nav-link" href="{{route('permissions.index')}}">
-          <i class="material-icons">library_books</i>
+          <i class="material-icons">format_list_numbered_rtl</i>
             <p>{{ __('Permisos') }}</p>
         </a>
       </li>
       <li class="nav-item{{ $activePage == 'roles' ? ' active' : '' }}">
         <a class="nav-link" href="{{route('roles.index')}}">
-          <i class="material-icons">library_books</i>
+          <i class="material-icons">build</i>
             <p>{{ __('Roles') }}</p>
-        </a>
-      </li>
-      <li class="nav-item{{ $activePage == 'inventario' ? ' active' : '' }}">
-        <a class="nav-link" href="{{route('medicamentos.index')}}">
-          <i class="material-icons">bubble_chart</i>
-          <p>{{ __('Inventario') }}</p>
-        </a>
-      </li>
-      <li class="nav-item{{ $activePage == 'commerce' ? ' active' : '' }}">
-        <a class="nav-link" href="{{route('medicamento.commerce')}}">
-          <i class="material-icons">location_ons</i>
-            <p>{{ __('Medicamentos') }}</p>
-        </a>
-      </li>
-      <li class="nav-item{{ $activePage == 'laboratorio' ? ' active' : '' }}">
-        <a class="nav-link" href="{{route('laboratorios.index')}}">
-          <i class="material-icons">location_ons</i>
-            <p>{{ __('Laboratorio') }}</p>
-        </a>
-      </li>
-      <li class="nav-item{{ $activePage == 'notifications' ? ' active' : '' }}">
-        <a class="nav-link" href="#">
-          <i class="material-icons">notifications</i>
-          <p>{{ __('Notifications') }}</p>
-        </a>
-      </li>
-      <li class="nav-item{{ $activePage == 'language' ? ' active' : '' }}">
-        <a class="nav-link" href="#">
-          <i class="material-icons">language</i>
-          <p>{{ __('RTL Support') }}</p>
         </a>
       </li>
     </ul>
