@@ -50,8 +50,8 @@
                                                     <td>{{$parte->nombreParte}}</td>
                                                     <td class="td-actions text-right">
                                                         <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editParte{{$parte->id}}"> <i class="material-icons">edit</i></button>
-                                                        <button class="btn btn-success" type="button">
-                                                            <i class="material-icons">arrow_circle_up</i>
+                                                        <button class="btn btn-danger" type="button">
+                                                            <i class="material-icons">remove</i>
                                                         </button>
                                                     </td>
                                                 </tr>

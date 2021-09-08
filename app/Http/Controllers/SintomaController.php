@@ -34,4 +34,11 @@ class SintomaController extends Controller
         return redirect()->back()->with('messageSintoma_add' , $messageSintoma_add);
 
     }
+
+    // public function destroy(Sintoma $sintomas)
+    // {
+    //     $sintomas->delete();
+    //     return redirect()->back()->with('messageSintoma_add', 'Sintoma eliminado correctamente');
+    // }
+
 }

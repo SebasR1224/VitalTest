@@ -48,6 +48,8 @@ Route::post('/recomendaciones/partes', [App\Http\Controllers\ParteController::cl
 //sintomas
 Route::get('/recomendaciones/sintomas', [App\Http\Controllers\SintomaController::class, 'show'])->name('sintomas.show');
 Route::post('/recomendaciones/sintomas', [App\Http\Controllers\SintomaController::class, 'save'])->name('sintoma.save');
+// Route::delete('/recomendaciones/sintomas/{id}',  [App\Http\Controllers\SintomaController::class, 'destroy'])->name('sintoma.delete');
+
 
 //recomendaciones
 Route::get('/recomendaciones/create', [App\Http\Controllers\RecomendacionController::class, 'create'])->name('recomendacion.create');

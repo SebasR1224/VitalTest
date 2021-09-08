@@ -25,6 +25,11 @@
   box-sizing: border-box;
 }
 
+@font-face {
+    font-family: what-time-is-it;
+    src: url(../assets/fuentes/what-time-is-it.regular.ttf);
+  }
+
 html {
   font-family: sans-serif;
   line-height: 1.15;
@@ -9239,8 +9244,8 @@ a.text-dark:focus {
 
 .btn.btn-danger {
   color: #fff;
-  background-color: #f44336;
-  border-color: #f44336;
+  background-color: #ff746b;
+  border-color: #ff1100;
   box-shadow: 0 2px 2px 0 rgba(244, 67, 54, 0.14), 0 3px 1px -2px rgba(244, 67, 54, 0.2), 0 1px 5px 0 rgba(244, 67, 54, 0.12);
 }
 
@@ -14700,7 +14705,7 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
   right: 15px;
   height: 1px;
   width: calc(100% - 30px);
-  background-color: rgba(180, 180, 180, 0.3);
+  background-color: rgb(0, 225, 255);
 }
 
 .sidebar .logo p {
@@ -14712,17 +14717,22 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
 }
 
 .sidebar .logo .simple-text {
+
+  font-family:'what-time-is-it' ;
   text-transform: uppercase;
   padding: 5px 0px;
   display: inline-block;
-  font-size: 18px;
-  color: #3C4858;
+  font-size: 30px;
+  color: #73D8D3;
   white-space: nowrap;
   font-weight: 400;
   line-height: 30px;
   overflow: hidden;
   text-align: center;
   display: block;
+}
+.sidebar .logo span {
+    color: #505050;
 }
 
 .sidebar .logo-tim {
@@ -14734,6 +14744,12 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
   float: left;
   overflow: hidden;
 }
+
+.sidebar .logo img {
+    padding-bottom: 3%;
+    width: 40px;
+    height: 40px;
+  }
 
 .sidebar .logo-tim img {
   width: 60px;

@@ -50,8 +50,8 @@
                                                     <td>{{$sintoma->nombreSintoma}}</td>
                                                     <td class="td-actions text-right">
                                                         <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editSintoma{{$sintoma->id}}"> <i class="material-icons">edit</i></button>
-                                                        <button class="btn btn-success" type="button">
-                                                            <i class="material-icons">arrow_circle_up</i>
+                                                        <button class="btn btn-danger" type="submit" rel="tooltip">
+                                                            <i class="material-icons">remove</i>
                                                         </button>
                                                     </td>
                                                 </tr>

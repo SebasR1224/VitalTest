@@ -21,12 +21,12 @@
                                     @endif
                                     <div class="row">
                                         <div class="col-12 text-right">
-                                            <a href="{{route('users.create')}}" class="btn bnt.sm btn-success">Agregar</a>
+                                            <a href="{{route('users.create')}}" class="btn bnt-sm btn-info">Agregar</a>
                                         </div>
                                     </div>
                                     <div class="table-responsive">
                                         <table id="usuarios" class="table">
-                                            <thead class="text-success">
+                                            <thead class="text-info">
                                                 <th>Codigo</th>
                                                 <th>Nombre de usuario</th>
                                                 <th>Correo</th>
@@ -57,14 +57,9 @@
                                                     <td class="td-actions text-right">
                                                         <a href="{{route('users.show', ['id'=>$user->id])}}"  class="btn btn-info"><i class="material-icons">contacts</i></a>
                                                         <a href="{{route('users.edit', ['id'=> $user->id]) }}" class="btn btn-warning"> <i class="material-icons">edit</i></a>
-
-                                                        @foreach ($user->roles as $role)
-                                                            @if ($role->name == "Farmacéutico")
-                                                            <button class="btn btn-success" type="button">
-                                                                <i class="material-icons">arrow_circle_up</i>
-                                                            </button>
-                                                            @endif
-                                                        @endforeach
+                                                        <button class="btn btn-success" type="button">
+                                                            <i class="material-icons">power_settings_new</i>
+                                                        </button>
                                                     </td>
                                                 </tr>
                                             </tbody>

@@ -53,6 +53,7 @@
                                                     <td class="td-actions text-right">
                                                         <a href="{{route('medicamentos.edit', $list->id)}}" class="btn btn-warning"> <i class="material-icons">edit</i></a>
                                                         <a href="{{route('medicamentos.show', $list->id)}}"  class="btn btn-white"><i class="material-icons">visibility</i></a>
+                                                        <a href="#"  class="btn btn-white"><i class="material-icons">visibility</i></a>
                                                     </td>
                                                 </tr>
                                             </tbody>

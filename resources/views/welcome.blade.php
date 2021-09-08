@@ -119,7 +119,7 @@
                     algún malestar general y en vista de esto entró en etapa de desarrollo vitaltest.
                   </p>
                   <p>
-                    Para asegurar la mejor experiencia para los clientes de pensó en las características que identifican este sistema son:
+                    Para asegurar la mejor experiencia para los clientes se tuvieron en cuenta estas características que identifican el sistema.
                   </p>
                   <ul>
                     <li>
@@ -149,31 +149,43 @@
               <div class="section-title">
                 <h2>Módulos</h2>
                 <h3>Revisa los módulos del <span>Aplicativo</span></h3>
-                <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
+                <p>Vitaltest cuenta con 3 módulos funcionales que cuentan con interfaz agil y dinámica, proxiamamento modulo de compra y ventas</p>
               </div>
-
               <div class="row">
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
                   <div class="icon-box">
-                    <div class="icon"><i class="bx bxl-dribbble"></i></div>
+                    <div class="icon"><i class="bi bi-bookmark-heart"></i></div>
                     <h4><a href="">Test médico</a></h4>
-                    <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+                    <p>
+                        Del lado del farmacéutico podemos llenar ilimitadas
+                        recomendaciones que se asocian al test médico que realiza
+                        la persona para que la respuesta de este sea dada por expertos.
+                    </p>
                   </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
                   <div class="icon-box">
-                    <div class="icon"><i class="bx bx-file"></i></div>
+                    <div class="icon"><i class="bi bi-people"></i></div>
                     <h4><a href="">Usuarios</a></h4>
-                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+                    <p>
+                        El módulo de usuarios, permite realizar un buen manejo de la información
+                        de cada persona para preservar la privacidad de los datos.
+                    </p>
                   </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
                   <div class="icon-box">
-                    <div class="icon"><i class="bx bx-tachometer"></i></div>
+                    <div class="icon"><i class="bi bi-bag-plus"></i></div>
                     <h4><a href="">Medicamentos</a></h4>
-                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+                    <p>
+                        Es posible mantener actualizado el catalogo
+                        teniendo en cuenta el cambio de datos, ademas
+                        dichos medicamentos estan relacionado con el
+                        test médico para mostrar una solucion con estos
+                        en caso de ser posible.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -186,41 +198,56 @@
             <div class="container" data-aos="fade-up">
 
               <div class="section-title">
-                <h2>Services</h2>
-                <h3>Check our <span>Services</span></h3>
-                <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
+                <h2>Funcionalidades</h2>
+                <h3>Innovación en <span>servicios</span></h3>
+                <p>Conoce las diferentes ventajas que tiene el sistema</p>
               </div>
 
               <div class="row">
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
                   <div class="icon-box">
-                    <div class="icon"><i class="bx bxl-dribbble"></i></div>
+                    <div class="icon"><i class="bi bi-lightbulb"></i></div>
                     <h4><a href="">Test médico</a></h4>
-                    <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+                    <p>
+                        Del lado de cliente, se puede entrar a este
+                        módulo y completar una serie de preguntas que
+                        se relacionan con el malestar del cliente para
+                        identificar su solución.
+                    </p>
                   </div>
                 </div>
 
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
                   <div class="icon-box">
-                    <div class="icon"><i class="bx bx-file"></i></div>
+                    <div class="icon"><i class="bi bi-chat-square-text"></i></div>
                     <h4><a href="">Chat con profesionales</a></h4>
-                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+                    <p>
+                        Para garantizar la conformidad de las personas, habilitamos un
+                        espacio para hablar con profesionales de la salud que pueden
+                        servir como refuerzo al test médico
+                    </p>
                   </div>
                 </div>
 
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
                   <div class="icon-box">
-                    <div class="icon"><i class="bx bx-tachometer"></i></div>
+                    <div class="icon"><i class="bi bi-cart3"></i></div>
                     <h4><a href="">Consulta de médicamentos</a></h4>
-                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+                    <p>
+                        Los clientes tendran a la mano un catalogo de medicamentos con sus
+                        respectivos precios actualizados teniendo en cuenta todo tipo de descuento.
+                    </p>
                   </div>
                 </div>
 
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="100">
                   <div class="icon-box">
-                    <div class="icon"><i class="bx bx-world"></i></div>
+                    <div class="icon"><i class="bi bi-reception-3"></i></div>
                     <h4><a href="">Reporte de enfermedades</a></h4>
-                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+                    <p>
+                        Identificando los resultados del test se pueden identificar las enfermedades
+                        que pueden encontrarse en el sector y la de mayor peligro.
+                    </p>
                   </div>
                 </div>
 
@@ -235,8 +262,7 @@
 
                         <div class="section-title">
                             <h2>Ventajas</h2>
-                            <h3>Check our <span>Services</span></h3>
-                            <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
+                            <h3>Utilizar vitaltest comprende grandes  <span>ventajas</span></h3>
                           </div>
 
                       <div class="row">
@@ -302,7 +328,7 @@
 
                     <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
                       <div class="count-box">
-                        <i class="bi bi-headset"></i>
+                        <i class="bi bi-tools"></i>
                         <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
                         <p>Horas de soporte</p>
                       </div>
@@ -310,8 +336,8 @@
 
                     <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
                       <div class="count-box">
-                        <i class="bi bi-people"></i>
-                        <span data-purecounter-start="0" data-purecounter-end="122" data-purecounter-duration="1" class="purecounter"></span>
+                        <i class="bi bi-person-lines-fill"></i>
+                        <span data-purecounter-start="0" data-purecounter-end="4" data-purecounter-duration="1" class="purecounter"></span>
                         <p>Trabajadores</p>
                       </div>
                     </div>
@@ -323,13 +349,13 @@
               <!-- End Counts Section -->
 
           <!-- ======= Team Section ======= -->
-          <section id="team" class="team section-bg">
+          {{-- <section id="team" class="team section-bg">
             <div class="container" data-aos="fade-up">
 
               <div class="section-title">
-                <h2>Team</h2>
-                <h3>Our Hardworking <span>Team</span></h3>
-                <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
+                <h2>Equipo</h2>
+                <h3><span>Personal</span> de trabajo</h3>
+                <p>Conoce a los jóvenes emprendedores  que trabajan en el desarrollo del software</p>
               </div>
 
               <div class="row">
@@ -409,40 +435,39 @@
               </div>
 
             </div>
-          </section><!-- End Team Section -->
+          </section><!-- End Team Section --> --}}
 
           <!-- ======= Contact Section ======= -->
           <section id="contact" class="contact">
             <div class="container" data-aos="fade-up">
 
               <div class="section-title">
-                <h2>Contact</h2>
-                <h3><span>Contact Us</span></h3>
-                <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
-              </div>
+                <h2>Contacto</h2>
+                <h3><span>Contactano</span></h3>
+                <p>Nos asegurábamos en tener en cuenta la opinión de nuestros clientes, en caso de tener alguna inquietud o solicitud, llene el formulario de contacto</p>              </div>
 
               <div class="row" data-aos="fade-up" data-aos-delay="100">
                 <div class="col-lg-6">
                   <div class="info-box mb-4">
                     <i class="bx bx-map"></i>
-                    <h3>Our Address</h3>
-                    <p>A108 Adam Street, New York, NY 535022</p>
+                    <h3>Nuestra direccción</h3>
+                    <p>C. 19A #96c-40, Bogotá</p>
                   </div>
                 </div>
 
                 <div class="col-lg-3 col-md-6">
                   <div class="info-box  mb-4">
                     <i class="bx bx-envelope"></i>
-                    <h3>Email Us</h3>
-                    <p>contact@example.com</p>
+                    <h3>Envíenos un correo electrónico</h3>
+                    <p>vitaltest@gmail.com </p>
                   </div>
                 </div>
 
                 <div class="col-lg-3 col-md-6">
                   <div class="info-box  mb-4">
                     <i class="bx bx-phone-call"></i>
-                    <h3>Call Us</h3>
-                    <p>+1 5589 55488 55</p>
+                    <h3>Llámanos</h3>
+                    <p>+57 548 12 67</p>
                   </div>
                 </div>
 
@@ -451,31 +476,31 @@
               <div class="row" data-aos="fade-up" data-aos-delay="100">
 
                 <div class="col-lg-6 ">
-                  <iframe class="mb-4 mb-lg-0" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63626.34057371896!2d-74.13219359941405!3d4.65700875248867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9c89a133caa7%3A0x90d1ccacac893246!2sSENA%20Centro%20de%20Gesti%C3%B3n%20de%20Mercados%2C%20Log%C3%ADstica%20y%20Tecnolog%C3%ADas%20de%20la%20Informaci%C3%B3n%20-%20Fontib%C3%B3n!5e0!3m2!1ses!2sco!4v1631102062158!5m2!1ses!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
 
                 <div class="col-lg-6">
                   <form action="forms/contact.php" method="post" role="form" class="php-email-form">
                     <div class="row">
                       <div class="col form-group">
-                        <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                        <input type="text" name="name" class="form-control" id="name" placeholder="Nombre" required>
                       </div>
                       <div class="col form-group">
-                        <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                        <input type="email" class="form-control" name="email" id="email" placeholder="Correo" required>
                       </div>
                     </div>
                     <div class="form-group">
-                      <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                      <input type="text" class="form-control" name="subject" id="subject" placeholder="Tema" required>
                     </div>
                     <div class="form-group">
-                      <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                      <textarea class="form-control" name="message" rows="5" placeholder="Mensaje" required></textarea>
                     </div>
                     <div class="my-3">
                       <div class="loading">Loading</div>
                       <div class="error-message"></div>
                       <div class="sent-message">Your message has been sent. Thank you!</div>
                     </div>
-                    <div class="text-center"><button type="submit">Send Message</button></div>
+                    <div class="text-center"><button type="submit">Enviar menasaje</button></div>
                   </form>
                 </div>
 
@@ -489,60 +514,35 @@
         <!-- ======= Footer ======= -->
         <footer id="footer">
 
-          <div class="footer-newsletter">
-            <div class="container">
-              <div class="row justify-content-center">
-                <div class="col-lg-6">
-                  <h4>Join Our Newsletter</h4>
-                  <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-                  <form action="" method="post">
-                    <input type="email" name="email"><input type="submit" value="Subscribe">
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
 
           <div class="footer-top">
             <div class="container">
               <div class="row">
 
-                <div class="col-lg-3 col-md-6 footer-contact">
-                  <h3>BizLand<span>.</span></h3>
+                <div class="col-lg-4 col-md-6 footer-contact">
+                  <h3>vital<span>test</span></h3>
                   <p>
-                    A108 Adam Street <br>
-                    New York, NY 535022<br>
-                    United States <br><br>
-                    <strong>Phone:</strong> +1 5589 55488 55<br>
-                    <strong>Email:</strong> info@example.com<br>
+                    C. 19A #96c-40,  <br>
+                    Bogotá<br>
+                    Colombia <br><br>
+                    <strong>Teléfono:</strong> +57 548 12 67<br>
+                    <strong>Correo:</strong> vitaltest@gmail.com<br>
                   </p>
                 </div>
 
-                <div class="col-lg-3 col-md-6 footer-links">
-                  <h4>Useful Links</h4>
+                <div class="col-lg-4 col-md-6 footer-links">
+                  <h4>Enlaces útiles</h4>
                   <ul>
-                    <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                    <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-                    <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-                    <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-                    <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href="#">Inicio</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href="#">Acerca de</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href="#">Módulos</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href="#">Servicios</a></li>
                   </ul>
                 </div>
 
-                <div class="col-lg-3 col-md-6 footer-links">
-                  <h4>Our Services</h4>
-                  <ul>
-                    <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-                    <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-                    <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-                    <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-                    <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
-                  </ul>
-                </div>
-
-                <div class="col-lg-3 col-md-6 footer-links">
-                  <h4>Our Social Networks</h4>
-                  <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
+                <div class="col-lg-4 col-md-6 footer-links">
+                  <h4>Nuestras redes sociales</h4>
+                  <p>Puedes visitar nuestras redes sociales dando clic a los siguientes iconos.</p>
                   <div class="social-links mt-3">
                     <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
                     <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
