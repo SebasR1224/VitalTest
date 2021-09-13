@@ -1,4 +1,8 @@
-@extends('layouts.main' , ['activePage' =>'partes' , 'titlePage' => 'Agregar una nuevo medicamento' ])
+@extends('layouts.main' , ['activePage' =>'inventario' , 'titlePage' => 'Agregar una nuevo medicamento' ])
+@section('css')
+    {{-- Buscador --}}
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+@endsection
 @section('content')
     <div class="content">
         <div class="container-fluid">
@@ -32,9 +36,10 @@
                                                 <div class="col-md-4 mt-md-0 mt-3"> <label>Precio</label> <input type="number" name="precioNormal" value="{{@old('precioNormal', $medicamento->precioNormal)}}" class="form-control" autofocus></div>
                                                 <div class="col-md-4 mt-md-0 mt-3"> <label>Descuento</label> <input type="number" name="descuento" value="{{@old('descuento', $medicamento->descuento)}}" class="form-control" autofocus></div>
                                             </div>
+                                            <hr>
                                             <div class="row">
                                                 <div class="col-md-6 mt-md-0 mt-3"> <label>Laboratorio</label>
-                                                    <select name="laboratorio_id" id="" class="form-control">
+                                                    <select name="laboratorio_id" id="laboratorios" class="form-control">
                                                         <option value="">Seleccione...</option>
                                                         @foreach ($laboratorios as $laboratorio)
                                                             <option value="{{$laboratorio->id}}" >{{$laboratorio->nombreLaboratorio}}</option>
@@ -42,23 +47,27 @@
                                                     </select>
                                                 </div>
                                                 <div class="col-md-6 mt-md-0 mt-3"> <label>Categoria</label>
-                                                    <select name="categoria_id" id="" class="form-control">
+                                                    <select name="categoria_id" id="categorias" class="form-control">
                                                         <option value="">Seleccione...</option>
                                                         @foreach ($categorias as $categoria)
                                                             <option value="{{$categoria->id}}" >{{$categoria->nombreCategoria}}</option>
                                                         @endforeach
                                                     </select>
                                                 </div>
-                                                <div class="col-md-6 mt-md-0 mt-3"> <label>Imagen seleccionada</label>
-                                                   <img id="imagenSeleccionada" style="max-height: 100px;"  >
-                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row">
                                                 <div class="col-md-6 mt-md-0 mt-3"> <label>Imagen medicamento</label>
-                                                   <input name="imagen" id="imagen" type="file" class="hidden">
+                                                    <input name="imagen" id="imagen" type="file" class="hidden">
+                                                </div>
+                                                <div class="col-md-6 mt-md-0 mt-3"> <label>Imagen seleccionada</label>
+                                                    <img id="imagenSeleccionada" style="max-height: 100px;"  >
                                                  </div>
                                             </div>
                                             <div class="row">
-                                                <div class="col-md-4 mt-md-0 mt-3"> <label>Estado</label> <input type="text" name="estado" value="{{ @old('estado', $medicamento->estado)}}" class="form-control" ></div>
+                                                <div class="col-md-4 mt-md-0 mt-3"><input type="hidden" name="estado" value="{{ @old('estado', $medicamento->estado)}}" class="form-control" ></div>
                                             </div>
+                                            <hr>
                                             <div class="card-footer ml-auto mr-auto">
                                                 <button type="submit" class="btn btn-success">Guardar recomendación</button>
                                             </div>
@@ -74,6 +83,9 @@
             </div>
         </div>
     </div>
+
+@endsection
+@section('js')
     {{-- Script para mostrar la imagen seleccionada cada que cambie --}}
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script>
@@ -86,6 +98,14 @@
                 reader.readAsDataURL(this.files[0]);
             });
         });
+    </script>
+    {{-- buscador del select --}}
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#laboratorios').select2();
+            $('#categorias').select2();
+        })
     </script>
 @endsection
 

@@ -1,78 +1,92 @@
-@extends('layouts.main', ['class' => 'off-canvas-sidebar', 'activePage' => 'login', 'title' => __('vitaltest')])
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
 
-@section('content')
-<div class="container" style="height: auto;">
-  <div class="row align-items-center">
-    <div class="col-md-9 ml-auto mr-auto mb-3 text-center">
-    </div>
-    <div class="col-lg-4 col-md-6 col-sm-8 ml-auto mr-auto">
-      <form class="form" method="POST" action="{{ route('login') }}">
-        @csrf
-        <div class="card card-login card-hidden mb-3">
-          <div class="card-header card-header-primary text-center">
-            <h4 class="card-title"><strong>{{ __('Inicio') }}</strong></h4>
-            <div class="social-line">
-              <a href="#" class="btn btn-just-icon btn-link btn-white">
-                <i class="fa fa-facebook-square"></i>
-              </a>
-              <a href="#" class="btn btn-just-icon btn-link btn-white">
-                <i class="fa fa-google-plus"></i>
-              </a>
-            </div>
-          </div>
-          <div class="card-body">
-            <p class="card-description text-center"><strong>vitaltest</strong> te da la bienvenida, esperamos disfrutes de nuestros beneficios </p>
-            <div class="bmd-form-group{{ $errors->has('username') ? ' has-danger' : '' }}">
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">
-                      <i class="material-icons">person_outline</i>
-                    </span>
+    <!-- icons -->
+    <script src="https://kit.fontawesome.com/18d9640215.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{asset('login-assets/css/owl.carousel.min.css')}}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{asset('login-assets/css/bootstrap.min.css')}}">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="{{asset('login-assets/css/style.css')}}">
+
+    <title>Iniciar sesión</title>
+  </head>
+  <body>
+  <div class="content">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6 contents">
+          <div class="row justify-content-center">
+            <div class="col-md-12">
+              <div class="form-block">
+                  <div class="">
+                    <h3 class="text-center mb-0"><img src="{{asset('login-assets/img/logo.png')}}" alt=""></h3>
+                    <h3 class="mt-4 font-weight-light">Iniciar sesión</h3>
+                  <p class="mb-4">Le damos la bienvenida, esperamos disfrute de nuestros beneficios.</p>
+                </div>
+                <form method="POST" action="{{ route('login') }}">
+                    @csrf
+                  <div class="form-group first">
+                    <label for="username">Nombre de usuario o correo</label>
+                    <input type="text" class="form-control" id="username" name="username"  value="{{ old('username', null) }}" required autocomplete="username" autofocus>
                   </div>
-                  <input type="text" name="username" class="form-control" placeholder="{{ __('Nombre usuario o Correo...') }}" value="{{ old('username', null) }}" required autocomplete="username" autofocus>
-                </div>
-                @if ($errors->has('username'))
-                  <div id="email-error" class="error text-danger pl-3" for="username" style="display: block;">
-                    <strong>{{ $errors->first('username') }}</strong>
+                  @if ($errors->has('username'))
+                    <div id="email-error" class="error text-danger pl-3" for="username" style="display: block;">
+                        <strong>{{ $errors->first('username') }}</strong>
+                    </div>
+                  @endif
+                  <div class="form-group last mb-4">
+                    <label for="password">Contraseña</label>
+                    <input type="password" class="form-control" name="password" id="password" class="form-control"  required autocomplete="current-password">
                   </div>
-                @endif
-            </div>
-            <div class="bmd-form-group{{ $errors->has('password') ? ' has-danger' : '' }} mt-3">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">
-                    <i class="material-icons">lock_outline</i>
-                  </span>
-                </div>
-                <input type="password" name="password" id="password" class="form-control" placeholder="{{ __('Contraseña...') }}" required autocomplete="current-password">
-              </div>
-              @if ($errors->has('password'))
-                <div id="password-error" class="error text-danger pl-3" for="password" style="display: block;">
-                  <strong>{{ $errors->first('password') }}</strong>
-                </div>
-              @endif
-            </div>
-            <div class="form-check mr-auto ml-3 mt-3">
-                @if (Route::has('password.request'))
-                    <a class="text-info" href="{{ route('password.request') }}">
-                        <small>{{ __('¿Olvidaste la contraseña?') }}</small>
+                  @if ($errors->has('password'))
+                    <div id="password-error" class="error text-danger pl-3" for="password" style="display: block;">
+                    <strong>{{ $errors->first('password') }}</strong>
+                    </div>
+                  @endif
+                  <div class="d-flex mb-5 align-items-center">
+                    @if (Route::has('password.request'))
+                        <a class="text-info" href="{{ route('password.request') }}">
+                            <span class="mb-0"><a href="#" class="forgot-pass">¿Olvidó su contraseña?</a></span>
+                        </a>
+                    @endif
+                  </div>
+
+                  <input type="submit" value="Iniciar sesión" class="btn btn-pill text-white btn-block btn-vital">
+
+                  <div class="mt-4">
+                    <a href="{{ route('register') }}" class="">Crear cuenta</a>
+                  </div>
+                  <span class="d-block text-center my-2 text-muted"> o inicia sesión con</span>
+
+
+                  <div class="social-login text-center">
+                    <a href="#" class="facebook">
+                      <span class="fab fa-facebook-f"></span>
                     </a>
-                @endif
+                    <a href="#" class="google">
+                      <span class="fab fa-google"></span>
+                    </a>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
-          <div class="card-footer justify-content-center">
-            <button type="submit" class="btn text-info btn-link btn-lg">{{ __('Iniciar sesión') }}</button>
-          </div>
-        </div>
-      </form>
-      <div class="row">
-        <div class="col-6  text-center">
-            <a href="{{ route('register') }}" class="text-light">
-                <small>{{ __('Crear nueva cuenta') }}</small>
-            </a>
         </div>
       </div>
     </div>
   </div>
-</div>
-@endsection
+    <script src="{{asset('login-assets/js/jquery-3.3.1.min.js')}}"></script>
+    <script src="{{asset('login-assets/js/popper.min.js')}}"></script>
+    <script src="{{asset('login-assets/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('login-assets/js/main.js')}}"></script>
+  </body>
+</html>
+

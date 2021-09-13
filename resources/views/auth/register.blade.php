@@ -1,94 +1,100 @@
-@extends('layouts.main', ['class' => 'off-canvas-sidebar', 'activePage' => 'register', 'title' => __('vitaltest')])
+<!doctype html>
+<html lang="es">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
 
-@section('content')
-<div class="container" style="height: auto;">
-  <div class="row align-items-center">
-    <div class="col-lg-4 col-md-6 col-sm-8 ml-auto mr-auto">
-      <form class="form" method="POST" action="{{ route('register') }}">
-        @csrf
+        <!-- icons -->
+        <script src="https://kit.fontawesome.com/18d9640215.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="{{asset('login-assets/css/owl.carousel.min.css')}}">
 
-        <div class="card card-login card-hidden mb-3">
-          <div class="card-header card-header-primary text-center">
-            <h4 class="card-title"><strong>{{ __('Crear cuenta') }}</strong></h4>
-            <div class="social-line">
-              <a href="#" class="btn btn-just-icon btn-link btn-white">
-                <i class="fa fa-facebook-square"></i>
-              </a>
-              <a href="#" class="btn btn-just-icon btn-link btn-white">
-                <i class="fa fa-google-plus"></i>
-              </a>
-            </div>
-          </div>
-          <div class="card-body ">
-            <p class="card-description text-center">Complete las sigientes credenciales</p>
-            {{-- Campo username --}}
-            <div class="bmd-form-group{{ $errors->has('username') ? ' has-danger' : '' }} mt-3">
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">
-                        <i class="material-icons">account_circle</i>
-                    </span>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="{{asset('login-assets/css/bootstrap.min.css')}}">
+
+        <!-- Style -->
+        <link rel="stylesheet" href="{{asset('login-assets/css/style.css')}}">
+
+        <title>Iniciar sesión</title>
+      </head>
+  <body>
+  <div class="content">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6 contents">
+          <div class="row justify-content-center">
+            <div class="col-md-12">
+              <div class="form-block">
+                <div class="mb-0">
+                  <h3 class="text-center mb-0"><img src="img/logo.png" alt=""></h3>
+                  <h3 class="mt-4 font-weight-light">Crear cuenta</h3>
+                  <p class="mb-4">Complete las sigientes credenciales para crear su cuenta.</p>
+                </div>
+                <form method="POST" action="{{ route('register') }}">
+                    @csrf
+                  <div class="form-group first">
+                    <label for="username">Nombre de usuario</label>
+                    <input type="text" class="form-control" id="username" name="username"  value="{{ old('username') }}" required autocomplete="username">
                   </div>
-                  <input type="text" name="username" class="form-control" placeholder="{{ __('Nombre de usuario...') }}" value="{{ old('username') }}" required autocomplete="username">
-                </div>
-                @if ($errors->has('username'))
-                  <div id="username-error" class="error text-danger pl-3" for="username" style="display: block;">
-                    <strong>{{ $errors->first('username') }}</strong>
+                  @if ($errors->has('username'))
+                    <div id="username-error" class="error text-danger pl-3" for="username" style="display: block;">
+                        <strong>{{ $errors->first('username') }}</strong>
+                    </div>
+                  @endif
+                  <div class="form-group first">
+                    <label for="email">Correo</label>
+                    <input type="email" class="form-control" id="email" name="email"  value="{{ old('email') }}" required autocomplete="email" >
                   </div>
-                @endif
-            </div>
-            <div class="bmd-form-group{{ $errors->has('email') ? ' has-danger' : '' }} mt-3">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">
-                    <i class="material-icons">email</i>
-                  </span>
-                </div>
-                <input type="email" name="email" class="form-control" placeholder="{{ __('Correo electrónico...') }}" value="{{ old('email') }}" required autocomplete="email">
+                  @if ($errors->has('email'))
+                    <div id="email-error" class="error text-danger pl-3" for="email" style="display: block;">
+                    <strong>{{ $errors->first('email') }}</strong>
+                    </div>
+                  @endif
+                  <div class="form-group last mb-4">
+                    <label for="password">Contraseña</label>
+                    <input type="password" class="form-control" id="password" name="password"  required autocomplete="new-password">
+                  </div>
+                  @if ($errors->has('password'))
+                    <div id="password-error" class="error text-danger pl-3" for="password" style="display: block;">
+                    <strong>{{ $errors->first('password') }}</strong>
+                    </div>
+                  @endif
+                  <div class="form-group last mb-4">
+                    <label for="password_confirmation">Confirmar contraseña</label>
+                    <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" required autocomplete="new-password" >
+                  </div>
+                  @if ($errors->has('password_confirmation'))
+                    <div id="password_confirmation-error" class="error text-danger pl-3" for="password_confirmation" style="display: block;">
+                    <strong>{{ $errors->first('password_confirmation') }}</strong>
+                    </div>
+                  @endif
+                  <input type="submit" value="Registrarse" class="btn btn-pill text-white btn-block btn-vital">
+                  <div class="mt-4">
+                    <a href="{{route('login')}}" class="p-2">Iniciar sesión</a>
+                  </div>
+
+                  <span class="d-block text-center my-2 text-muted"> Registrarse con</span>
+
+                  <div class="social-login text-center">
+                    <a href="#" class="facebook">
+                      <span class="fab fa-facebook-f"></span>
+                    </a>
+                    <a href="#" class="google">
+                      <span class="fab fa-google"></span>
+                    </a>
+                  </div>
+                </form>
               </div>
-              @if ($errors->has('email'))
-                <div id="email-error" class="error text-danger pl-3" for="email" style="display: block;">
-                  <strong>{{ $errors->first('email') }}</strong>
-                </div>
-              @endif
             </div>
-            <div class="bmd-form-group{{ $errors->has('password') ? ' has-danger' : '' }} mt-3">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">
-                    <i class="material-icons">lock_outline</i>
-                  </span>
-                </div>
-                <input type="password" name="password" id="password" class="form-control" placeholder="{{ __('Contraseña...') }}" required autocomplete="new-password">
-              </div>
-              @if ($errors->has('password'))
-                <div id="password-error" class="error text-danger pl-3" for="password" style="display: block;">
-                  <strong>{{ $errors->first('password') }}</strong>
-                </div>
-              @endif
-            </div>
-            <div class="bmd-form-group{{ $errors->has('password_confirmation') ? ' has-danger' : '' }} mt-3">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">
-                    <i class="material-icons">lock_outline</i>
-                  </span>
-                </div>
-                <input type="password" name="password_confirmation" id="password_confirmation" class="form-control" placeholder="{{ __('Confirmar contraseña...') }}" required autocomplete="new-password">
-              </div>
-              @if ($errors->has('password_confirmation'))
-                <div id="password_confirmation-error" class="error text-danger pl-3" for="password_confirmation" style="display: block;">
-                  <strong>{{ $errors->first('password_confirmation') }}</strong>
-                </div>
-              @endif
-            </div>
-          </div>
-          <div class="card-footer justify-content-center">
-            <button type="submit" class="btn text-info btn-link btn-lg">{{ __('Registrarse') }}</button>
           </div>
         </div>
-      </form>
+      </div>
     </div>
   </div>
-</div>
-@endsection
+    <script src="{{asset('login-assets/js/jquery-3.3.1.min.js')}}"></script>
+    <script src="{{asset('login-assets/js/popper.min.js')}}"></script>
+    <script src="{{asset('login-assets/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('login-assets/js/main.js')}}"></script>
+  </body>
+</html>

@@ -33,7 +33,5 @@
         <script src="{{ asset('js/core/popper.min.js') }}"></script>
         <script src="{{ asset('js/core/bootstrap-material-design.min.js') }}"></script>
         <script src="{{ asset('js/plugins/perfect-scrollbar.jquery.min.js') }}"></script>
-        @stack('js')
-        @yield('js')
     </body>
 </html>
