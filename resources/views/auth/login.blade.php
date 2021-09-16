@@ -31,6 +31,11 @@
                     <h3 class="mt-4 font-weight-light">Iniciar sesión</h3>
                   <p class="mb-4">Le damos la bienvenida, esperamos disfrute de nuestros beneficios.</p>
                 </div>
+               @if (session('error'))
+                    <div class="font-medium text-red-600">
+                    {{ session('error')}}
+                    </div>
+               @endif
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
                   <div class="form-group first">
@@ -54,7 +59,7 @@
                   <div class="d-flex mb-5 align-items-center">
                     @if (Route::has('password.request'))
                         <a class="text-info" href="{{ route('password.request') }}">
-                            <span class="mb-0"><a href="#" class="forgot-pass">¿Olvidó su contraseña?</a></span>
+                            <span class="mb-0"><small class="forgot-pass">{{ __('¿Olvidaste la contraseña?') }}</small></span>
                         </a>
                     @endif
                   </div>

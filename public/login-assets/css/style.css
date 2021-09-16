@@ -6,8 +6,8 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  background-image: url(..//img/login.jpg); 
-  background-size: cover; 
+  background-image: url(..//img/login.jpg);
+  background-size: cover;
   background-position: top center;
 }
 
@@ -30,15 +30,18 @@ h3 .test {
 }
 
 .logo  {
-  width:"40px"; 
+  width:"40px";
 }
 
 a {
   -webkit-transition: .3s all ease;
   -o-transition: .3s all ease;
-  transition: .3s all ease; }
+  transition: .3s all ease;
+  text-decoration: none !important;
+}
   a:hover {
-    text-decoration: none !important; }
+    color: #15AFA3 !important;
+}
 
 .content {
   padding: 7rem 0; }
@@ -50,7 +53,7 @@ h2 {
   background: #fff;
   padding: 40px;
   -webkit-box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
-  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1); 
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
   border-radius: 10px;}
   @media (max-width: 991.98px) {
     .form-block {
@@ -121,7 +124,7 @@ h2 {
   position: relative;
   top: 2px;
   font-size: 14px;
-  text-decoration: none; 
+  text-decoration: none;
 }
 .content .forgot-pass:hover {
 color: #15AFA3;

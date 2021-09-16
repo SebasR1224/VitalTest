@@ -16,7 +16,7 @@
         <!-- Style -->
         <link rel="stylesheet" href="{{asset('login-assets/css/style.css')}}">
 
-        <title>Iniciar sesión</title>
+        <title>Registrarse</title>
       </head>
   <body>
   <div class="content">
@@ -27,7 +27,7 @@
             <div class="col-md-12">
               <div class="form-block">
                 <div class="mb-0">
-                  <h3 class="text-center mb-0"><img src="img/logo.png" alt=""></h3>
+                  <h3 class="text-center mb-0"><img src="{{asset('login-assets/img/logo.png')}}" alt=""></h3>
                   <h3 class="mt-4 font-weight-light">Crear cuenta</h3>
                   <p class="mb-4">Complete las sigientes credenciales para crear su cuenta.</p>
                 </div>
