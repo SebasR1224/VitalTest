@@ -6,6 +6,7 @@ use App\Http\Requests\UserCreateRequest;
 use App\Models\Profile;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
@@ -83,5 +84,19 @@ class UserController extends Controller
             $user = User::find($id);
             $datos = $user->profile ? $user->profile : new Profile() ;
         return view('users.profile' , compact('datos', 'user'));
+    }
+
+    //estatus del usuario
+    public function statusUser($id){
+        $user = User::find($id);
+
+        if($user->status == 1 ){
+            $status = 0;
+        }else{
+            $status = 1;
+        }
+        $values = array('status' => $status);
+        DB::table('users')->where('id',$id)->update($values);
+        return redirect()->route('users.index')->with('message_add', 'Estado a cambiado');
     }
 }

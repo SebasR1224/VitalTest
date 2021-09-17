@@ -32,6 +32,7 @@
                                                 <th>Correo</th>
                                                 <th>Rol</th>
                                                 <th>Fecha de creacion</th>
+                                                <th>Estado</th>
                                                 <th class="text-right">Acciones</th>
                                             </thead>
                                             @foreach ($users as $user )
@@ -54,12 +55,17 @@
                                                         @endforelse
                                                     </td>
                                                     <td>{{$user->created_at}}</td>
+                                                    <td>
+                                                        <form action="{{route('update.status', $user->id)}}" method="POST" class="d-inline form-update">
+                                                            @csrf
+                                                            @foreach ($user->roles as $role)
+                                                            <button class="btn btn-sm {{$user->status == 1 ? 'btn-success' : 'btn-danger'}}" {{$role->name == 'Gerente' ? 'disabled="true"' : ''}} type="submit">{{$user->status == 1 ? 'Activo' : 'Inactivo'}}</button>
+                                                            @endforeach
+                                                        </form>
+                                                    </td>
                                                     <td class="td-actions text-right">
                                                         <a href="{{route('users.show', ['id'=>$user->id])}}"  class="btn btn-info"><i class="material-icons">contacts</i></a>
                                                         <a href="{{route('users.edit', ['id'=> $user->id]) }}" class="btn btn-warning"> <i class="material-icons">edit</i></a>
-                                                        <button class="btn btn-success" type="button">
-                                                            <i class="material-icons">power_settings_new</i>
-                                                        </button>
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -77,6 +83,29 @@
             </div>
         </div>
     </div>
+@endsection
+@section('js')
+    {{-- Alertas de confirmacion estado --}}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        $('.form-update').submit(function(e){
+            e.preventDefault();
+            Swal.fire({
+            title: '¿Está seguro?',
+            text: "Cambiara el estado del usuario",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: '¡Si, Cambiar estado!',
+            cancelButtonText: 'Cancelar'
+            }).then((result) => {
+            if (result.isConfirmed) {
+               this.submit();
+            }
+            })
+        });
+    </script>
 @endsection
 
 

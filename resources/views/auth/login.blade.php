@@ -32,7 +32,7 @@
                   <p class="mb-4">Le damos la bienvenida, esperamos disfrute de nuestros beneficios.</p>
                 </div>
                @if (session('error'))
-                    <div class="font-medium text-red-600">
+                    <div class="font-medium text-red">
                     {{ session('error')}}
                     </div>
                @endif

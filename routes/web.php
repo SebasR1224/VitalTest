@@ -1,9 +1,12 @@
 <?php
 
+use App\Http\Controllers\ContactanosController;
 use App\Http\Controllers\LaboratorioController;
+use App\Mail\ContactanosMailable;
 use App\Models\Laboratorio;
 use App\Models\Medicamento;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -30,7 +33,7 @@ Route::get('/users', [App\Http\Controllers\UserController::class, 'index'])->nam
 Route::get('/users/{id}', [App\Http\Controllers\UserController::class, 'show'])->name('users.show');
 Route::get('/users/{id}/edit', [App\Http\Controllers\UserController::class, 'edit'])->name('users.edit');
 Route::put('/users/{id}' , [App\Http\Controllers\UserController::class, 'update'])->name('users.update');
-
+Route::post('status-update/{id}', [App\Http\Controllers\UserController::class, 'statusUser'])->name('update.status');
 
 //profile
 Route::get('/users/profile/{id}', [App\Http\Controllers\UserController::class, 'profile'])->name('users.profile');
@@ -80,3 +83,11 @@ Route::resource('medicamentos', App\Http\Controllers\MedicamentoController::clas
 
 //commerce
 Route::get('/commerce', [App\Http\Controllers\MedicamentoController::class, 'commerce'])->name('medicamento.commerce');
+
+
+//Formulario de contacto
+Route::post('contactanos', [App\Http\Controllers\ContactanosController::class, 'send'])->name('contactanos.send');
+
+// Route::get('contactos', function () {
+//     return new ContactanosMailable("Motivo", "mensaje", "nombre", "correo");
+// });
