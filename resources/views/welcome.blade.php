@@ -59,7 +59,7 @@
                 <li><a class="nav-link scrollto active" href="#hero">Inicio</a></li>
                 <li><a class="nav-link scrollto" href="#about">Acerca de</a></li>
                 <li><a class="nav-link scrollto" href="#modules">Módulos</a></li>
-                <li><a class="nav-link scrollto" href="#services">Servicios</a></li>
+                <li><a class="nav-link scrollto" href="#services">Funcionalidades</a></li>
                 <li><a class="nav-link scrollto" href="#ventajas">Ventajas</a></li>
                 <li><a class="nav-link scrollto" href="#team">Equipo</a></li>
                 <li><a class="nav-link scrollto" href="#contact">Contacto</a></li>
@@ -88,7 +88,6 @@
             <h2>La nueva tecnología que proteje  tu salud</h2>
             <div class="d-flex">
               <a href="#about" class="btn-get-started scrollto">Empezar</a>
-              <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Ver video</span></a>
             </div>
           </div>
         </section>
@@ -103,8 +102,8 @@
 
               <div class="section-title">
                 <h2>Acerca de</h2>
-                <h3>Descubre más sobre <span>nosotros</span></h3>
-                <p>Vitaltest aplicativo que piensa en la comodidad de todos sus clientes y en las necesidades de cada uno en el area de la salud.</p>
+                <h3>Descubre más sobre <span>el software</span></h3>
+                <p>Vitaltest aplicativo que piensa en la comodidad de sus beneficiarios y en las necesidades de cada uno en el área de la salud.</p>
               </div>
 
               <div class="row">
@@ -112,14 +111,13 @@
                   <img src="assets/img/about.jpg" class="img-fluid" alt="">
                 </div>
                 <div class="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
-                  <h3>Soluciones para tu malestar, rápido seguro y sin salir de casa.</h3>
+                  <h3>Soluciones para el malestar de sus clientes.</h3>
                   <p class="fst-italic">
-                    Durante la pandemia del COVID 19 se identificaron algunas falencias en el sector se la salud a nivel mundial y una de ellas
-                    es la que ataca vitaltest, pues muchas personas no saben que medicamentos o medidas adicionales se deben tomar cuando presentan
-                    algún malestar general y en vista de esto entró en etapa de desarrollo vitaltest.
+                    El equipo de desarrolladores identificó las necesidades que se presentan en el sector de la salud y pensando en las comodidades de los usuarios comenzó el análisis y producción de Vitaltest, un sistema que permite conocer la solución con medicamentos de cualquier malestar general que presenten los beneficiarios de aluna entidad pública o privada salud.
                   </p>
+                  <p> </p>
                   <p>
-                    Para asegurar la mejor experiencia para los clientes se tuvieron en cuenta estas características que identifican el sistema.
+                    Para asegurar la mejor experiencia para los clientes se tuvieron en cuenta estas características que identifican el sistema como uno de los mejores.
                   </p>
                   <ul>
                     <li>
@@ -148,8 +146,8 @@
 
               <div class="section-title">
                 <h2>Módulos</h2>
-                <h3>Revisa los módulos del <span>Aplicativo</span></h3>
-                <p>Vitaltest cuenta con 3 módulos funcionales que cuentan con interfaz agil y dinámica, proxiamamento modulo de compra y ventas</p>
+                <h3>Revisa los módulos de <span>vitaltest</span></h3>
+                <p>Vitaltest ofrece 3 modulos totalmente funcionales que reflejan caracteristicas unicas ademas de inferaz fácil, agil y segura</p>
               </div>
               <div class="row">
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
@@ -199,8 +197,7 @@
 
               <div class="section-title">
                 <h2>Funcionalidades</h2>
-                <h3>Innovación en <span>servicios</span></h3>
-                <p>Conoce las diferentes ventajas que tiene el sistema</p>
+                <h3>Software con funcionalidades <span>innovadoras</span></h3>
               </div>
 
               <div class="row">
@@ -262,7 +259,8 @@
 
                         <div class="section-title">
                             <h2>Ventajas</h2>
-                            <h3>Utilizar vitaltest comprende grandes  <span>ventajas</span></h3>
+                            <h3>Grandes <span> ventajas</span> ofrece vitaltest</h3>
+                            <p>Conoce sobre las virtudes que tiene el sistema</p>
                           </div>
 
                       <div class="row">
@@ -270,7 +268,7 @@
                           <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
                             <div class="icon"><i class="bi bi-shield-check"></i></div>
                             <h4 class="title"><a href="">Confiabilidad</a></h4>
-                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+                            <p class="description">Vitaltest controla todo módulo con permisos de rol para garantizar que la información suministrada allí esté dada por profesionales, además cada campo está controlado para ingresar información real y con especificaciones exactas.  </p>
                           </div>
                         </div>
 
@@ -278,7 +276,7 @@
                           <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
                             <div class="icon"><i class="bi bi-stars"></i></div>
                             <h4 class="title"><a href="">Eficacia</a></h4>
-                            <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+                            <p class="description">Los resultados de cada módulo están pensados para mostrar información lo más optima y cómoda para el usuario.</p>
                           </div>
                         </div>
 
@@ -286,7 +284,7 @@
                           <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
                             <div class="icon"><i class="bi bi-speedometer"></i></div>
                             <h4 class="title"><a href="">Rapidez</a></h4>
-                            <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+                            <p class="description">Software que asegura una velocidad de respuesta que no supera los 10 segundos, evidentemte garantiza comodidad para todo tipo de usuario.</p>
                           </div>
                         </div>
 
@@ -294,7 +292,7 @@
                           <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
                             <div class="icon"><i class="bi bi-lock"></i></div>
                             <h4 class="title"><a href="">Privacidad</a></h4>
-                            <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+                            <p class="description">La información solicitada allí es con el fin de ofrecer numerosas soluciones a todo tipo de personas, no se utilizará para otros fines corruptos que alteren la privacidad de la información personal de cada usuario. </p>
                           </div>
                         </div>
 
@@ -303,53 +301,8 @@
                     </div>
                   </section>
                   <!-- End Featured Services Section -->
-
-              <!-- ======= Counts Section ======= -->
-              <section id="counts" class="counts">
-                <div class="container" data-aos="fade-up">
-
-                  <div class="row">
-
-                    <div class="col-lg-3 col-md-6">
-                      <div class="count-box">
-                        <i class="bi bi-emoji-smile"></i>
-                        <span data-purecounter-start="0" data-purecounter-end="1000" data-purecounter-duration="1" class="purecounter"></span>
-                        <p>Clientes satisfechos</p>
-                      </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
-                      <div class="count-box">
-                        <i class="bi bi-journal-richtext"></i>
-                        <span data-purecounter-start="0" data-purecounter-end="89" data-purecounter-duration="1" class="purecounter"></span>
-                        <p>Semanas de trabajo</p>
-                      </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-                      <div class="count-box">
-                        <i class="bi bi-tools"></i>
-                        <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
-                        <p>Horas de soporte</p>
-                      </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-                      <div class="count-box">
-                        <i class="bi bi-person-lines-fill"></i>
-                        <span data-purecounter-start="0" data-purecounter-end="4" data-purecounter-duration="1" class="purecounter"></span>
-                        <p>Trabajadores</p>
-                      </div>
-                    </div>
-
-                  </div>
-
-                </div>
-              </section>
-              <!-- End Counts Section -->
-
           <!-- ======= Team Section ======= -->
-          {{-- <section id="team" class="team section-bg">
+          <section id="team" class="team section-bg">
             <div class="container" data-aos="fade-up">
 
               <div class="section-title">
@@ -399,7 +352,7 @@
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
                   <div class="member">
                     <div class="member-img">
-                      <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
+                      <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
                       <div class="social">
                         <a href=""><i class="bi bi-twitter"></i></a>
                         <a href=""><i class="bi bi-facebook"></i></a>
@@ -417,7 +370,7 @@
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
                   <div class="member">
                     <div class="member-img">
-                      <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
+                      <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
                       <div class="social">
                         <a href=""><i class="bi bi-twitter"></i></a>
                         <a href=""><i class="bi bi-facebook"></i></a>
@@ -435,7 +388,7 @@
               </div>
 
             </div>
-          </section><!-- End Team Section --> --}}
+          </section><!-- End Team Section -->
 
           <!-- ======= Contact Section ======= -->
           <section id="contact" class="contact">
@@ -443,14 +396,14 @@
 
               <div class="section-title">
                 <h2>Contacto</h2>
-                <h3><span>Contactano</span></h3>
-                <p>Nos asegurábamos en tener en cuenta la opinión de nuestros clientes, en caso de tener alguna inquietud o solicitud, llene el formulario de contacto</p>              </div>
+                <h3><span>Contáctanos</span></h3>
+                <p>vitaltest tiene en cuenta la opinión de los clientes, en caso de tener alguna inquietud o solicitud, llene el formulario de contacto</p>              </div>
 
               <div class="row" data-aos="fade-up" data-aos-delay="100">
                 <div class="col-lg-6">
                   <div class="info-box mb-4">
                     <i class="bx bx-map"></i>
-                    <h3>Nuestra direccción</h3>
+                    <h3>Nuestra dirección</h3>
                     <p>C. 19A #96c-40, Bogotá</p>
                   </div>
                 </div>
@@ -518,42 +471,23 @@
 
 
           <div class="footer-top">
-            <div class="container">
+            <div class="container ">
               <div class="row">
 
-                <div class="col-lg-4 col-md-6 footer-contact">
+                <div class="col-lg-4 col-md-4 footer-contact">
                   <h3>vital<span>test</span></h3>
-                  <p>
-                    C. 19A #96c-40,  <br>
-                    Bogotá<br>
-                    Colombia <br><br>
-                    <strong>Teléfono:</strong> +57 548 12 67<br>
-                    <strong>Correo:</strong> vitaltest@gmail.com<br>
-                  </p>
                 </div>
-
-                <div class="col-lg-4 col-md-6 footer-links">
-                  <h4>Enlaces útiles</h4>
-                  <ul>
-                    <li><i class="bx bx-chevron-right"></i> <a href="#">Inicio</a></li>
-                    <li><i class="bx bx-chevron-right"></i> <a href="#">Acerca de</a></li>
-                    <li><i class="bx bx-chevron-right"></i> <a href="#">Módulos</a></li>
-                    <li><i class="bx bx-chevron-right"></i> <a href="#">Servicios</a></li>
-                  </ul>
-                </div>
-
-                <div class="col-lg-4 col-md-6 footer-links">
-                  <h4>Nuestras redes sociales</h4>
-                  <p>Puedes visitar nuestras redes sociales dando clic a los siguientes iconos.</p>
-                  <div class="social-links mt-3">
-                    <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                    <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                    <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                    <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                    <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                <div class="col-lg-4 col-md-4 footer-contact">
+                    <p>
+                        <strong>Teléfono:</strong> +57 548 12 67<br>
+                        <strong>Correo:</strong> vitaltest@gmail.com<br>
+                    </p>
                   </div>
+                <div class="col-lg-4 col-md-4 footer-contact">
+                    <p>
+                        <strong>©vitaltes 2021 </strong>– Todos los derechos reservados
+                    </p>
                 </div>
-
               </div>
             </div>
           </div>

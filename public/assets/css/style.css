@@ -1675,14 +1675,11 @@ section {
   background: #fff;
 }
 
-#footer .footer-top .footer-contact {
-  margin-bottom: 30px;
-}
+
 
 #footer .footer-top .footer-contact h3 {
-  font-size: 24px;
-  margin: 0 0 15px 0;
-  padding: 2px 0 2px 0;
+  font-size: 50px;
+  padding: 0px 0 0px 0;
   line-height: 1;
   font-weight: 700;
   color: #73D8D3;
@@ -1696,7 +1693,7 @@ section {
 #footer .footer-top .footer-contact p {
   font-size: 14px;
   line-height: 24px;
-  margin-bottom: 0;
+  margin-bottom: 0px;
   font-family: "Roboto", sans-serif;
   color: #777777;
 }
@@ -1706,12 +1703,9 @@ section {
   font-weight: bold;
   color: #444444;
   position: relative;
-  padding-bottom: 12px;
+  padding-bottom: 0px;
 }
 
-#footer .footer-top .footer-links {
-  margin-bottom: 30px;
-}
 
 #footer .footer-top .footer-links ul {
   list-style: none;
